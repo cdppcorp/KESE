@@ -13,6 +13,7 @@ Generate secure coding prompts based on KISA guidelines and international standa
 |---|-----------|-------------|
 | 1 | **CII Secure Coding** | Traditional vulnerabilities (SQLi, XSS, etc.) |
 | 2 | **AI Security Coding** | AI-specific (Prompt Injection, Data Poisoning, etc.) |
+| 3 | **Robot Security Coding** | Robot-specific (IEC 62443, firmware, protocols) |
 
 ## CII Branch
 

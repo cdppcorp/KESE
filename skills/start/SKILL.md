@@ -13,6 +13,7 @@ Perform comprehensive security vulnerability assessment based on KISA guidelines
 |---|-----------|-------------|:-----:|
 | 1 | **CII (Critical Information Infrastructure)** | Technical(424)+Administrative(127)+Physical(18) | ~560 |
 | 2 | **AI Security** | AI Developer/Service Provider/User requirements | ~54 |
+| 3 | **Robot Security** | Industrial/Service/Medical robot checklist (11 categories) | ~103 |
 
 ### Auto-detection
 - Servers, networks, databases, web services, firewalls → **CII**

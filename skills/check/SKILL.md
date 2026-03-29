@@ -13,6 +13,7 @@ Run pre-deployment security checks. Auto-selects guideline based on user context
 |---|-----------|-------------|
 | 1 | **CII Compliance** | 70-item pre-deployment checklist |
 | 2 | **AI Security Checklist** | AI developer/provider verification |
+| 3 | **Robot Security Checklist** | Robot system 11 categories, 103 items |
 
 Servers, infrastructure → **CII** / AI models, LLM → **AI Security**
 

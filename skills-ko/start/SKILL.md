@@ -17,11 +17,13 @@ KISA 가이드라인에 따른 보안 취약점 분석평가를 수행합니다.
 |---|----------|------|:------:|
 | 1 | **주요정보통신기반시설(CII)** | 기술적(424)+관리적(127)+물리적(18) 취약점 | ~560 |
 | 2 | **AI 보안** | AI 개발자/서비스제공자/이용자 보안 요구사항 | ~54 |
+| 3 | **로봇 보안** | 산업용/서비스용/의료용 로봇 보안 체크리스트 (11개 카테고리) | ~103 |
 
 ### 자동 판별 기준
 
 - 서버, 네트워크, 데이터베이스, 웹 서비스, 방화벽 등 → **CII**
 - AI 모델, LLM, 생성형 AI, 머신러닝, 프롬프트 등 → **AI 보안**
+- 로봇, 산업용 로봇, 서비스 로봇, 의료용 로봇, ROS, PLC 등 → **로봇 보안**
 - 클라우드, 가상화 → 맥락에 따라 CII 또는 AI 보안
 
 ---
@@ -107,6 +109,39 @@ reports/ai-security/
 ├── developer.md        ← 개발자 보안 검증 결과
 ├── service-provider.md ← 서비스 제공자 검증 결과
 └── user-checklist.md   ← 이용자 체크리스트 결과
+```
+
+---
+
+## 로봇 보안 분기 시
+
+`references/robot-security/` 디렉터리에서 해당 reference를 읽어 평가를 수행합니다.
+
+### 1단계: 대상 확인
+
+| 대상 | reference 파일 |
+|------|---------------|
+| 전체 개요 | `references/robot-security/overview.md` |
+| SSDF (보안 SW 개발) | `references/robot-security/ssdf.md` |
+| 공급망 보안 | `references/robot-security/supply-chain.md` |
+| IEC 62443 기반 (IA, UC, SI, DP, DFR, ER, RA) | `references/robot-security/iec62443.md` |
+| 사이버 복원력 | `references/robot-security/cyber-resilience.md` |
+| 무선 보안 | `references/robot-security/wireless.md` |
+
+### 2단계: 카테고리별 평가
+
+11개 카테고리, 총 ~103개 체크리스트 항목을 점검합니다.
+
+### 3단계: 보고서 생성
+
+```
+reports/robot-security/
+├── summary.md          ← 전체 평가 요약
+├── ssdf.md             ← SSDF 19항목 결과
+├── supply-chain.md     ← 공급망 7항목 결과
+├── iec62443.md         ← IEC 62443 50항목 결과
+├── cyber-resilience.md ← 사이버 복원력 13항목 결과
+└── wireless.md         ← 무선 보안 14항목 결과
 ```
 
 ---

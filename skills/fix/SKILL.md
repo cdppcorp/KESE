@@ -13,6 +13,7 @@ Generate and apply fixes based on vulnerability assessment results. Auto-selects
 |---|-----------|-------------|
 | 1 | **CII Hardening** | Platform-specific hardening scripts |
 | 2 | **AI Security Fixes** | AI system security hardening |
+| 3 | **Robot Security Fixes** | Robot system hardening (IEC 62443, CRA, RED) |
 
 ## CII Branch
 
