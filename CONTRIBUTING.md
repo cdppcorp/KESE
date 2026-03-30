@@ -79,6 +79,21 @@ cp -r skills-ko/start/references/new-guideline skills/guide/references/
 
 `README.md`와 `docs/` 아래 각 언어별 README에 새 가이드라인 정보를 추가합니다.
 
+### Step 8: 검증 스크립트 실행
+
+PR을 올리기 전에 아래 검증 스크립트를 실행하세요:
+
+```bash
+node scripts/validate-content.mjs
+```
+
+이 스크립트는 다음을 검사합니다:
+- README / SKILL / reference 간 항목 수 정합성
+- `start/check/fix/guide` 간 reference 파일 목록 및 내용 드리프트
+- Robot Security 라우터 분기 누락 여부
+
+GitHub Actions에서도 동일한 검증이 자동 실행됩니다.
+
 ---
 
 ## Reference 파일 작성 가이드
