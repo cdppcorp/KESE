@@ -22,10 +22,10 @@
         "./skills/check",
         "./skills/fix",
         "./skills/guide",
-        "./skills-ko/start",
-        "./skills-ko/check",
-        "./skills-ko/fix",
-        "./skills-ko/guide"
+        "./skills-ko/start-ko",
+        "./skills-ko/check-ko",
+        "./skills-ko/fix-ko",
+        "./skills-ko/guide-ko"
       ]
     }
   ]
