@@ -24,7 +24,7 @@ description: 보안 취약점 자동 수정 및 하드닝 스크립트를 생성
 ### 실행 흐름
 1. `reports/kese/`에서 이전 평가 결과 읽기 (있는 경우)
 2. 이전 평가가 없으면 사용자에게 대상 플랫폼 확인
-3. 해당 reference 파일을 `references/cii/`에서 로드
+3. 해당 템플릿 파일을 `templates/cii/`에서 로드 (점검/수정 스크립트는 `scripts/cii/`에 있음)
 4. 플랫폼별 하드닝 스크립트 생성
 5. 스크립트를 `scripts/kese-hardening/`에 저장
 
@@ -43,14 +43,14 @@ scripts/kese-hardening/
 
 | 플랫폼 | reference | 스크립트 유형 |
 |--------|-----------|-------------|
-| Unix/Linux | `references/cii/unix.md` | bash |
-| Windows | `references/cii/windows.md` | PowerShell |
-| 웹 서비스 | `references/cii/web-service.md` | conf 파일 |
-| DBMS | `references/cii/database.md` | SQL |
-| 네트워크 장비 | `references/cii/network.md` | CLI 명령어 |
-| 보안 장비 | `references/cii/security-equip.md` | 설정 가이드 |
-| PC | `references/cii/pc.md` | PowerShell/GPO |
-| 클라우드 | `references/cii/cloud.md` | CLI 명령어 |
+| Unix/Linux | `templates/cii/unix.md` | bash |
+| Windows | `templates/cii/windows.md` | PowerShell |
+| 웹 서비스 | `templates/cii/web-service.md` | conf 파일 |
+| DBMS | `templates/cii/database.md` | SQL |
+| 네트워크 장비 | `templates/cii/network.md` | CLI 명령어 |
+| 보안 장비 | `templates/cii/security-equip.md` | 설정 가이드 |
+| PC | `templates/cii/pc.md` | PowerShell/GPO |
+| 클라우드 | `templates/cii/cloud.md` | CLI 명령어 |
 
 ### 수정 적용 시 주의사항
 - 수정 전 항상 설정 백업
@@ -71,7 +71,7 @@ scripts/kese-hardening/
 
 | 대상 | reference | 조치 내용 |
 |------|-----------|----------|
-| AI 개발자 | `references/ai-security/developer.md` | 모델 보안, 데이터 보호, API 보안 코드 |
+| AI 개발자 | `templates/ai-security/developer.md` | 모델 보안, 데이터 보호, API 보안 코드 |
 | 서비스 제공자 | `references/ai-security/service-provider.md` | 서비스 보안 설정, 접근통제 |
 | AI 이용자 | `references/ai-security/user-guide.md` | 보안 수칙 적용 체크리스트 |
 
@@ -86,7 +86,7 @@ scripts/kese-hardening/
 
 ## 로봇 보안 분기 시
 
-`references/robot-security/`를 로드하여 로봇 시스템 보안 강화 가이드를 생성합니다.
+`templates/robot-security/`를 로드하여 로봇 시스템 보안 강화 가이드를 생성합니다.
 
 ### 로봇 보안 주요 조치 영역
 - Secure SDLC / SSDF 적용

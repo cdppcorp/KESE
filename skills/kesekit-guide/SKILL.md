@@ -18,19 +18,19 @@ Generate secure coding prompts based on KISA guidelines and international standa
 
 ## CII Branch
 
-Reference `references/cii/webapp.md` for CWE-based patterns. Generate language-specific prompts (Python, JavaScript, Java, Go, etc.) and function-specific prompts (auth, file upload, API security).
+Reference `templates/cii/webapp.md` for CWE-based patterns. Check commands available in `scripts/cii/` directory. Generate language-specific prompts (Python, JavaScript, Java, Go, etc.) and function-specific prompts (auth, file upload, API security).
 
 ## AI Security Branch
 
-Reference `references/ai-security/developer.md` and `references/ai-security/overview.md`. Generate prompts for: Prompt Injection defense, Data Poisoning prevention, Model Extraction protection, LLM security, RAG pipeline security.
+Reference `templates/ai-security/developer.md` and `references/ai-security/overview.md`. Generate prompts for: Prompt Injection defense, Data Poisoning prevention, Model Extraction protection, LLM security, RAG pipeline security.
 
 ## Robot Security Branch
 
-Reference `references/robot-security/overview.md` first, then use `ssdf.md`, `supply-chain.md`, `iec62443.md`, `cyber-resilience.md`, or `wireless.md` depending on whether the user needs prompts for firmware, ROS/ROS2 nodes, robot APIs, field protocols, supply chain controls, or wireless interfaces.
+Reference `templates/robot-security/overview.md` first, then use `ssdf.md`, `supply-chain.md`, `iec62443.md`, `cyber-resilience.md`, or `wireless.md` from `templates/robot-security/` depending on whether the user needs prompts for firmware, ROS/ROS2 nodes, robot APIs, field protocols, supply chain controls, or wireless interfaces.
 
 ## Space Security Branch
 
-Reference `references/space-security/overview.md` first, then use domain-specific files for satellite communication encryption, ground station access control, GSaaS API security, SBOM, anti-jamming/anti-spoofing, or CMMC/NIS2/K-RMF compliance.
+Reference `references/space-security/overview.md` first, then use domain-specific files from `templates/space-security/` for satellite communication encryption, ground station access control, GSaaS API security, and `references/space-security/supply-chain.md` for SBOM, anti-jamming/anti-spoofing, or CMMC/NIS2/K-RMF compliance.
 
 ## Usage
 

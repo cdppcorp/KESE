@@ -30,7 +30,7 @@ KISA 가이드라인에 따른 보안 취약점 분석평가를 수행합니다.
 
 ## CII 분기 시
 
-`references/cii/` 디렉터리에서 대상 시스템에 해당하는 reference 파일을 읽어 평가를 수행합니다.
+`templates/cii/` 디렉터리에서 대상 시스템에 해당하는 평가 템플릿 파일을 읽어 평가를 수행합니다. 점검/수정 스크립트는 `scripts/cii/`에 있습니다.
 
 ### 1단계: 환경 탐지
 
@@ -38,20 +38,20 @@ KISA 가이드라인에 따른 보안 취약점 분석평가를 수행합니다.
 
 | 시스템 | reference 파일 | 항목 수 |
 |--------|---------------|:------:|
-| Unix/Linux 서버 | `references/cii/unix.md` | 67 |
-| Windows 서버 | `references/cii/windows.md` | 64 |
-| 웹 서비스 | `references/cii/web-service.md` | 26 |
-| 보안 장비 | `references/cii/security-equip.md` | 23 |
-| 네트워크 장비 | `references/cii/network.md` | 38 |
-| 제어시스템 | `references/cii/control-system.md` | 46 |
-| PC | `references/cii/pc.md` | 18 |
-| DBMS | `references/cii/database.md` | 26 |
-| 이동통신 | `references/cii/mobile.md` | 4 |
-| Web Application | `references/cii/webapp.md` | 21 |
-| 가상화 장비 | `references/cii/virtualization.md` | 25 |
-| 클라우드 | `references/cii/cloud.md` | 19 |
-| 관리적 취약점 | `references/cii/admin.md` | 127 |
-| 물리적 취약점 | `references/cii/physical.md` | 18 |
+| Unix/Linux 서버 | `templates/cii/unix.md` | 67 |
+| Windows 서버 | `templates/cii/windows.md` | 64 |
+| 웹 서비스 | `templates/cii/web-service.md` | 26 |
+| 보안 장비 | `templates/cii/security-equip.md` | 23 |
+| 네트워크 장비 | `templates/cii/network.md` | 38 |
+| 제어시스템 | `templates/cii/control-system.md` | 46 |
+| PC | `templates/cii/pc.md` | 18 |
+| DBMS | `templates/cii/database.md` | 26 |
+| 이동통신 | `templates/cii/mobile.md` | 4 |
+| Web Application | `templates/cii/webapp.md` | 21 |
+| 가상화 장비 | `templates/cii/virtualization.md` | 25 |
+| 클라우드 | `templates/cii/cloud.md` | 19 |
+| 관리적 취약점 | `templates/cii/admin.md` | 127 |
+| 물리적 취약점 | `templates/cii/physical.md` | 18 |
 
 ### 2단계: 취약점 분석
 
@@ -87,7 +87,7 @@ reports/kese/
 | 대상 | reference 파일 |
 |------|---------------|
 | 전체 개요 | `references/ai-security/overview.md` |
-| AI 개발자 | `references/ai-security/developer.md` |
+| AI 개발자 | `templates/ai-security/developer.md` |
 | AI 서비스 제공자 | `references/ai-security/service-provider.md` |
 | AI 이용자 | `references/ai-security/user-guide.md` |
 
@@ -115,18 +115,18 @@ reports/ai-security/
 
 ## 로봇 보안 분기 시
 
-`references/robot-security/` 디렉터리에서 해당 reference를 읽어 평가를 수행합니다.
+`templates/robot-security/` 디렉터리에서 해당 템플릿을 읽어 평가를 수행합니다.
 
 ### 1단계: 대상 확인
 
 | 대상 | reference 파일 |
 |------|---------------|
-| 전체 개요 | `references/robot-security/overview.md` |
-| SSDF (보안 SW 개발) | `references/robot-security/ssdf.md` |
-| 공급망 보안 | `references/robot-security/supply-chain.md` |
-| IEC 62443 기반 (IA, UC, SI, DP, DFR, ER, RA) | `references/robot-security/iec62443.md` |
-| 사이버 복원력 | `references/robot-security/cyber-resilience.md` |
-| 무선 보안 | `references/robot-security/wireless.md` |
+| 전체 개요 | `templates/robot-security/overview.md` |
+| SSDF (보안 SW 개발) | `templates/robot-security/ssdf.md` |
+| 공급망 보안 | `templates/robot-security/supply-chain.md` |
+| IEC 62443 기반 (IA, UC, SI, DP, DFR, ER, RA) | `templates/robot-security/iec62443.md` |
+| 사이버 복원력 | `templates/robot-security/cyber-resilience.md` |
+| 무선 보안 | `templates/robot-security/wireless.md` |
 
 ### 2단계: 카테고리별 평가
 

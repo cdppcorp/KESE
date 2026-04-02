@@ -26,24 +26,26 @@ Perform comprehensive security vulnerability assessment based on KISA guidelines
 
 ## CII Branch
 
-Read the appropriate reference file from `references/cii/` based on the target system.
+Read the appropriate reference file from `templates/cii/` based on the target system.
 
 | System | Reference File | Items |
 |--------|---------------|:-----:|
-| Unix/Linux | `references/cii/unix.md` | 67 |
-| Windows Server | `references/cii/windows.md` | 64 |
-| Web Service | `references/cii/web-service.md` | 26 |
-| Security Equipment | `references/cii/security-equip.md` | 23 |
-| Network Equipment | `references/cii/network.md` | 38 |
-| Control System | `references/cii/control-system.md` | 46 |
-| PC | `references/cii/pc.md` | 18 |
-| DBMS | `references/cii/database.md` | 26 |
-| Mobile | `references/cii/mobile.md` | 4 |
-| Web Application | `references/cii/webapp.md` | 21 |
-| Virtualization | `references/cii/virtualization.md` | 25 |
-| Cloud | `references/cii/cloud.md` | 19 |
-| Administrative | `references/cii/admin.md` | 127 |
-| Physical | `references/cii/physical.md` | 18 |
+| Unix/Linux | `templates/cii/unix.md` | 67 |
+| Windows Server | `templates/cii/windows.md` | 64 |
+| Web Service | `templates/cii/web-service.md` | 26 |
+| Security Equipment | `templates/cii/security-equip.md` | 23 |
+| Network Equipment | `templates/cii/network.md` | 38 |
+| Control System | `templates/cii/control-system.md` | 46 |
+| PC | `templates/cii/pc.md` | 18 |
+| DBMS | `templates/cii/database.md` | 26 |
+| Mobile | `templates/cii/mobile.md` | 4 |
+| Web Application | `templates/cii/webapp.md` | 21 |
+| Virtualization | `templates/cii/virtualization.md` | 25 |
+| Cloud | `templates/cii/cloud.md` | 19 |
+| Administrative | `templates/cii/admin.md` | 127 |
+| Physical | `templates/cii/physical.md` | 18 |
+
+Check commands available in `scripts/cii/` directory.
 
 ### Judgment Criteria
 - **Pass**: Security settings properly applied
@@ -55,12 +57,12 @@ Read the appropriate reference file from `references/cii/` based on the target s
 
 ## AI Security Branch
 
-Read from `references/ai-security/` based on target audience.
+Read from `references/ai-security/` for overview and guidance, and `templates/ai-security/` for assessment checklists.
 
 | Target | Reference File |
 |--------|---------------|
 | Overview | `references/ai-security/overview.md` |
-| AI Developer | `references/ai-security/developer.md` |
+| AI Developer | `templates/ai-security/developer.md` |
 | Service Provider | `references/ai-security/service-provider.md` |
 | User | `references/ai-security/user-guide.md` |
 
@@ -70,16 +72,16 @@ Read from `references/ai-security/` based on target audience.
 
 ## Robot Security Branch
 
-Read from `references/robot-security/` based on the target robot system or concern.
+Read from `templates/robot-security/` based on the target robot system or concern.
 
 | Topic | Reference File |
 |-------|---------------|
-| Overview | `references/robot-security/overview.md` |
-| SSDF / secure software development | `references/robot-security/ssdf.md` |
-| Supply chain security | `references/robot-security/supply-chain.md` |
-| IEC 62443 controls (IA, UC, SI, DP, DFR, ER, RA) | `references/robot-security/iec62443.md` |
-| Cyber resilience | `references/robot-security/cyber-resilience.md` |
-| Wireless security | `references/robot-security/wireless.md` |
+| Overview | `templates/robot-security/overview.md` |
+| SSDF / secure software development | `templates/robot-security/ssdf.md` |
+| Supply chain security | `templates/robot-security/supply-chain.md` |
+| IEC 62443 controls (IA, UC, SI, DP, DFR, ER, RA) | `templates/robot-security/iec62443.md` |
+| Cyber resilience | `templates/robot-security/cyber-resilience.md` |
+| Wireless security | `templates/robot-security/wireless.md` |
 
 Assess the relevant categories for industrial, service, or medical robots and generate a dedicated `reports/robot-security/` summary when robot security is selected.
 
@@ -87,15 +89,15 @@ Assess the relevant categories for industrial, service, or medical robots and ge
 
 ## Space Security Branch
 
-Read from `references/space-security/` based on target space system.
+Read from `references/space-security/` for overview and supply chain guidance, and `templates/space-security/` for assessment checklists.
 
 | Topic | Reference File |
 |-------|---------------|
 | Overview | `references/space-security/overview.md` |
-| Access Control & Authentication (AC, IA) | `references/space-security/access-control.md` |
-| System & Communication Security (SC, SI) | `references/space-security/system-security.md` |
-| Operations & Incident Response (SO, IR) | `references/space-security/operations.md` |
-| Governance, Personnel, Physical, Risk, Contingency (PS, PE, RA, SG, CP) | `references/space-security/governance.md` |
+| Access Control & Authentication (AC, IA) | `templates/space-security/access-control.md` |
+| System & Communication Security (SC, SI) | `templates/space-security/system-security.md` |
+| Operations & Incident Response (SO, IR) | `templates/space-security/operations.md` |
+| Governance, Personnel, Physical, Risk, Contingency (PS, PE, RA, SG, CP) | `templates/space-security/governance.md` |
 | Supply Chain Management (SM) + Threat Scenarios | `references/space-security/supply-chain.md` |
 
 12 domains, 53 items. Standards: CMMC, K-RMF, NIS2, ISMS-P. Generate reports in `reports/space-security/`.

@@ -22,23 +22,23 @@ Servers, infrastructure → **CII** / AI models, LLM → **AI Security** / robot
 
 ## CII Branch
 
-Load reference files from `references/cii/` based on detected environment. Check categories: Account Security (15), Access Control (15), Encryption (12), Logging (10), Service Hardening (12), Patch Management (6).
+Load reference files from `templates/cii/` based on detected environment. Check commands available in `scripts/cii/` directory. Check categories: Account Security (15), Access Control (15), Encryption (12), Logging (10), Service Hardening (12), Patch Management (6).
 
 Severity: Critical (deployment blocker) → High → Medium → Low
 
 ## AI Security Branch
 
-Load from `references/ai-security/`. Check developer (54 items), service provider, or user checklists by lifecycle phase.
+Load from `references/ai-security/` for overview and guidance, and `templates/ai-security/` for assessment checklists. Check developer (54 items), service provider, or user checklists by lifecycle phase.
 
 ## Robot Security Branch
 
-Load from `references/robot-security/`. Start with `overview.md`, then select one or more category references (`ssdf.md`, `supply-chain.md`, `iec62443.md`, `cyber-resilience.md`, `wireless.md`) based on the robot type, interfaces, and regulatory context.
+Load from `templates/robot-security/`. Start with `overview.md`, then select one or more category references (`ssdf.md`, `supply-chain.md`, `iec62443.md`, `cyber-resilience.md`, `wireless.md`) based on the robot type, interfaces, and regulatory context.
 
 ---
 
 ## Space Security Branch
 
-Load from `references/space-security/`. Start with `overview.md`, then select domain references based on the space system type (GSaaS, satellite operator, ground station). Check against CMMC/K-RMF/NIS2/ISMS-P standards.
+Load from `references/space-security/` for overview and supply chain guidance, and `templates/space-security/` for assessment checklists. Start with `references/space-security/overview.md`, then select domain references based on the space system type (GSaaS, satellite operator, ground station). Check against CMMC/K-RMF/NIS2/ISMS-P standards.
 
 ---
 

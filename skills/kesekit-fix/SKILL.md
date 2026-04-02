@@ -18,19 +18,19 @@ Generate and apply fixes based on vulnerability assessment results. Auto-selects
 
 ## CII Branch
 
-Load reference from `references/cii/` → generate hardening scripts saved to `scripts/kese-hardening/`.
+Load reference from `templates/cii/` → generate hardening scripts saved to `scripts/kese-hardening/`. Check commands available in `scripts/cii/` directory.
 
 ## AI Security Branch
 
-Load from `references/ai-security/` → generate security hardening code for AI pipelines, model security, API protection, LLM guardrails.
+Load from `references/ai-security/` for overview and guidance, and `templates/ai-security/` for assessment checklists → generate security hardening code for AI pipelines, model security, API protection, LLM guardrails.
 
 ## Robot Security Branch
 
-Load from `references/robot-security/` → generate robot security remediation guidance for secure development, supply chain controls, IEC 62443 controls, cyber resilience planning, and wireless security.
+Load from `templates/robot-security/` → generate robot security remediation guidance for secure development, supply chain controls, IEC 62443 controls, cyber resilience planning, and wireless security.
 
 ## Space Security Branch
 
-Load from `references/space-security/` → generate space system hardening guidance. Fix scripts in `references/space-security/access-control-fix.md`, `system-security-fix.md`, `operations-fix.md`.
+Load from `references/space-security/` for overview and supply chain guidance, and `templates/space-security/` for assessment checklists → generate space system hardening guidance. Fix scripts in `scripts/space-security/access-control-fix.md`, `scripts/space-security/system-security-fix.md`, `scripts/space-security/operations-fix.md`.
 
 ## Notes
 - Always backup before applying fixes
