@@ -344,6 +344,54 @@ KESE-KIT/
 
 ## 변경 이력
 
+### v3.1.0 (2026-04-02)
+
+**구조 리팩토링 — references/templates/scripts 3분류 분리**
+
+| 변경 | 이전 (v3.0) | 이후 (v3.1) |
+|------|------------|------------|
+| 리소스 구조 | references/ 단일 디렉터리 | references/ + templates/ + scripts/ 3분류 |
+| 스크립트 | 인라인 코드 블록 (345줄) | 독립 스크립트 파일 (7,000+줄) |
+| 체크리스트 | references에 혼재 | templates/로 분리 |
+| 명령어 형식 | `/kesekit-start` | `/kesekit:start` (네임스페이스:스킬) |
+
+**CII 스크립트 대폭 보강 (원본 873페이지 가이드 기반)**
+- Unix: 112 → 1,531줄 (U-01~U-67, Linux/Solaris/AIX/HP-UX)
+- Windows: 80 → 1,489줄 (W-01~W-64, PowerShell/레지스트리)
+- Web Application: 31 → 880줄 (21개 취약점, Java/PHP/JS 코드 예시)
+- Web Service: 30 → 725줄 (WEB-01~WEB-26, Apache/Nginx/IIS/Tomcat)
+- Network: 28 → 892줄 (N-01~N-38, Cisco/Juniper)
+- Database: 18 → 649줄 (D-01~D-26, Oracle/MySQL/MSSQL/PostgreSQL)
+- Cloud: 20 → 517줄 (CA-01~CA-19, AWS/Azure/GCP CLI)
+- PC: 26 → 348줄 (PC-01~PC-18, PowerShell/GPO)
+
+**로봇 보안 스크립트 신규 추가**
+- 출처: 로봇 보안취약점 점검 체크리스트 해설서 (ref-005)
+- firewall-hardening, resource-management, sbom-audit, cert-and-protocol 4개 파일
+
+### v3.0.0 (2026-04-02)
+
+**Breaking Change: 명령어 형식 변경**
+- 모든 스킬이 단일 `kesekit` 네임스페이스로 통합
+- 명령어 형식: `/start` → `/kesekit:start` (네임스페이스 접두사 추가)
+- 기존 사용자는 재설치 필요: `claude plugins uninstall kesekit && claude plugins install kesekit`
+
+**새 가이드라인 추가: 우주 보안**
+- 출처: 우주 보안모델 Part1 134p + Part2 223p + 해설서 218p (과기정통부/KISA)
+- 12개 분야(AC/IA/SC/SI/SO/IR/PS/PE/RA/SG/CP/SM), 53개 체크리스트 항목
+- 대상: 위성 운영사, GSaaS 제공자, 지상국 운영사, 우주 공급망 참여기업
+- 참조 표준: CMMC, K-RMF, NIS2, ISMS-P, NIST IR 8401/8270, CCSDS
+- 6개 위협 시나리오 포함 (GSaaS 3개 + 공급망 3개)
+- PaddleOCR 기반 한국어 PDF OCR 변환 파이프라인 구축
+
+### v2.1.0 (2026-03-30)
+
+**새 가이드라인 추가: 로봇 보안**
+- 출처: 로봇 보안모델(고도화) 156p + 로봇 보안취약점 점검 체크리스트 해설서 225p
+- 11개 카테고리, ~103개 체크리스트 항목
+- 참조 표준: NIST SP 800-218, IEC 62443, EU CRA, EU RED, NIS2
+- 6개 reference 파일 추가
+
 ### v2.0.0 (2026-03-30)
 
 **구조 리팩토링 — Progressive Disclosure 패턴 적용**
@@ -365,29 +413,6 @@ KESE-KIT/
 **CII 가이드라인 업데이트**
 - 2026 상세가이드 기반으로 전체 항목 재추출
 - 항목 코드 체계 반영 (WEB, HV, CA 등 신규 코드)
-
-### v2.1.0 (2026-03-30)
-
-**새 가이드라인 추가: 로봇 보안**
-- 출처: 로봇 보안모델(고도화) 156p + 로봇 보안취약점 점검 체크리스트 해설서 225p
-- 11개 카테고리, ~103개 체크리스트 항목
-- 참조 표준: NIST SP 800-218, IEC 62443, EU CRA, EU RED, NIS2
-- 6개 reference 파일 추가
-
-### v3.0.0 (2026-04-02)
-
-**Breaking Change: 명령어 형식 변경**
-- 모든 스킬이 단일 `kesekit` 네임스페이스로 통합
-- 명령어 형식: `/start` → `/kesekit:start` (네임스페이스 접두사 추가)
-- 기존 사용자는 재설치 필요: `claude plugins uninstall kesekit && claude plugins install kesekit`
-
-**새 가이드라인 추가: 우주 보안**
-- 출처: 우주 보안모델 Part1 134p + Part2 223p + 해설서 218p (과기정통부/KISA)
-- 12개 분야(AC/IA/SC/SI/SO/IR/PS/PE/RA/SG/CP/SM), 53개 체크리스트 항목
-- 대상: 위성 운영사, GSaaS 제공자, 지상국 운영사, 우주 공급망 참여기업
-- 참조 표준: CMMC, K-RMF, NIS2, ISMS-P, NIST IR 8401/8270, CCSDS
-- 6개 위협 시나리오 포함 (GSaaS 3개 + 공급망 3개)
-- PaddleOCR 기반 한국어 PDF OCR 변환 파이프라인 구축
 
 ### v1.0.0 (2026-03-29)
 

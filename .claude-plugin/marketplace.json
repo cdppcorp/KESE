@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "KISA-based security vulnerability assessment skills. Supports CII (560+ items), AI Security Guide, Robot Security (103 items), and Space Security (satellite/GSaaS/supply chain, 53 items). Available in English and Korean.",
-    "version": "3.0.0",
+    "version": "3.1.0",
     "license": "MIT"
   },
   "plugins": [
