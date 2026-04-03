@@ -4,22 +4,22 @@
 
 # KESE - KISA Enhanced Security Evaluation Kit
 
-Ett Claude Code skill-plugin for sarbarhetsanalys av kritisk informationsinfrastruktur (CII) och AI-sakerhetsutvardering.
+Ett Claude Code skill-plugin for sarbarhetsanalys av kritisk informationsinfrastruktur (CII), AI-sakerhetsutvardering, robotsakerhet, rymdsakerhet, saker kodning och Zero Trust-utvardering.
 
 ---
 
 ## Oversikt
 
-KESE (KISA Enhanced Security Evaluation Kit) ar ett Claude Code-plugin som erbjuder omfattande funktioner for sarbarhetsanalys baserad pa KISA:s (Korea Internet & Security Agency) riktlinjer. Det stoder bade utvarderingar av kritisk informationsinfrastruktur (CII) och AI-sakerhetsutvarderingar.
+KESE (KISA Enhanced Security Evaluation Kit) ar ett Claude Code-plugin som erbjuder omfattande funktioner for sarbarhetsanalys baserad pa KISA:s (Korea Internet & Security Agency) riktlinjer. Det stoder utvarderingar av kritisk informationsinfrastruktur (CII), AI-sakerhet, robotsakerhet, rymdsakerhet, saker kodning och Zero Trust-utvardering.
 
 ## Funktioner
 
 | Skill | Beskrivning |
 |-------|-------------|
-| `/kesekit:start` | Kor fullstandig sakerhetsarbarhetsanalys (CII 560+ objekt eller AI-sakerhet) |
-| `/kesekit:check` | Sakerhetschecklista for efterlevnad fore driftsattning |
-| `/kesekit:fix` | Generera hardening-skript och sakerhetsatgarder automatiskt |
-| `/kesekit:guide` | Generera secure coding-promptar for AI-verktyg |
+| `/kesekit-start` | Kor fullstandig sakerhetsarbarhetsanalys (CII 560+ / AI / Robot / Rymd / Saker kodning / Zero Trust) |
+| `/kesekit-check` | Sakerhetschecklista for efterlevnad fore driftsattning (CII / AI / Robot / Rymd / Saker kodning / Zero Trust) |
+| `/kesekit-fix` | Generera hardening-skript och sakerhetsatgarder automatiskt (CII / AI / Robot / Rymd / Saker kodning / Zero Trust) |
+| `/kesekit-guide` | Generera secure coding-promptar for AI-verktyg (CII / AI / Robot / Rymd / JS·Python·Allman / Zero Trust) |
 
 ## Riktlinjer som stods
 
@@ -52,26 +52,104 @@ KESE (KISA Enhanced Security Evaluation Kit) ar ett Claude Code-plugin som erbju
 | AI-tjanstleverantor | ~43 | 6 faser (Planering→Utveckling→Drift→Underhall→Aterrapportering→Avveckling) |
 | AI-anvandare | 7 | Sakerhetsriktlinjer |
 
+### 3. Robotsakerhet — ~103 objekt
+
+| Kategori | Kod | Antal objekt | Referensstandard |
+|----------|-----|:------:|-----------------|
+| Saker SW-utveckling (SSDF) | SSDF-01~19 | 19 | NIST SP 800-218 |
+| Leveranskedjesakerhet | SC-01~07 | 7 | NIST SP 800-161 |
+| Identifiering och autentisering | IA-01~11 | 11 | IEC 62443 |
+| Anvandningskontroll | UC-01~11 | 11 | IEC 62443 |
+| Systemintegritet | SI-01~11 | 11 | IEC 62443 |
+| Dataskydd | DP-01~04 | 4 | IEC 62443 |
+| Begransning av dataflode | DFR-01~02 | 2 | IEC 62443 |
+| Incidentrespons | ER-01~03 | 3 | IEC 62443 |
+| Resurstillganglighet | RA-01~08 | 8 | IEC 62443 |
+| Cyberresiliens | CR-01~13 | 13 | EU CRA |
+| Tradlos sakerhet | WS-01~14 | 14 | EU RED |
+
+Malgrupp: Industrirobotar / Tjensterobotar / Medicinska robotar (ISO 8373)
+
+### 4. Rymdsakerhet — 53 objekt
+
+| Omrade | Kod | Antal objekt | Referensstandard |
+|--------|-----|:------:|-----------------|
+| Atkomstkontroll | AC-01~12 | 12 | CMMC, K-RMF |
+| Identifiering och autentisering | IA-01~02 | 2 | CMMC, NIS2 |
+| System- och kommunikationssakerhet | SC-01~07 | 7 | NIST IR 8401 |
+| System- och informationsintegritet | SI-01~04 | 4 | NIST CSF |
+| System-/tjanstdriftsforvaltning | SO-01~09 | 9 | ISMS-P |
+| Incidentrespons | IR-01~02 | 2 | NIS2 |
+| Personalsakerhet | PS-01~02 | 2 | CMMC |
+| Fysisk sakerhet | PE-01~03 | 3 | K-RMF |
+| Risk- och sakerhetsbedomning | RA-01~02 | 2 | NIST CSF |
+| Sakerhetsstyrning | SG-01~04 | 4 | ISMS-P |
+| Beredskapsplan | CP-01~02 | 2 | NIST IR 8270 |
+| Leveranskedjehantering | SM-01~04 | 4 | CMMC, NIS2 |
+
+Malgrupp: Satellitoperatorer, GSaaS-leverantorer, Markstationsoperatorer, Foretag i rymdleveranskedjan
+
+### 5. Guide for saker kodning — 46 objekt
+
+| Kategori | Antal objekt | Antal CWE | Referensstandard |
+|----------|:------:|:------:|-----------------|
+| Indatavalidering och -representation | 16 | 18 | CWE/SANS Top 25, OWASP Top 10 |
+| Sakerhetsfunktioner | 16 | 16 | CWE/SANS Top 25 |
+| Tid och tillstand | 2 | 3 | CWE |
+| Felhantering | 3 | 3 | CWE |
+| Kodfel | 3 | 3 | CWE |
+| Inkapsling | 4 | 5 | CWE |
+| API-missbruk | 2 | 1 | CWE |
+
+**Sprak som stods:**
+| Sprak | Antal objekt | Ramverk |
+|-------|:------:|---------|
+| Pseudo Code (Allman) | 46 | Sprakobeorende monster |
+| JavaScript | 42 | Express.js, Sequelize, Mongoose, Node.js crypto |
+| Python | 46 | Django, Flask, SQLAlchemy, cryptography |
+
+Malgrupp: JavaScript/Python-webbutvecklare, AI-verktygsanvandare (Claude, Cursor, Copilot), Vibe Coding-utvecklare
+
+### 6. Zero Trust-sakerhet — ~421 objekt
+
+| Karnelement | Kod | Antal objekt | Mognad |
+|-------------|-----|:------:|--------|
+| Identitet | ZT-ID-01~53 | 53 | Traditionell/Initial/Avancerad/Optimal |
+| Enhet & Andpunkt | ZT-DV-01~36 | 36 | Traditionell/Initial/Avancerad/Optimal |
+| Natverk | ZT-NW-01~54 | 54 | Traditionell/Initial/Avancerad/Optimal |
+| System | ZT-SY-01~49 | 49 | Traditionell/Initial/Avancerad/Optimal |
+| Applikation & Arbetsbelastning | ZT-AP-01~60 | 60 | Traditionell/Initial/Avancerad/Optimal |
+| Data | ZT-DA-01~58 | 58 | Traditionell/Initial/Avancerad/Optimal |
+| Synlighet & Analys | ZT-VA-01~43 | 43 | Traditionell/Initial/Avancerad/Optimal |
+| Automatisering & Orkestrering | ZT-AU-01~43 | 43 | Traditionell/Initial/Avancerad/Optimal |
+| OT/ICS-specifik | ZT-OT-01~25 | 25 | Traditionell/Initial/Avancerad/Optimal |
+
+**4 mognadsnivder**: Traditionell (Traditional) → Initial (Initial) → Avancerad (Advanced) → Optimal (Optimal)
+**Referensstandarder**: KISA Zero Trust Guideline 2.0, NIST SP 800-207, CISA ZT Maturity Model
+
+Malgrupp: Organisationer som infor Zero Trust, OT/ICS-miljoer, Organisationer som migrerar till molnet, Ansvariga for sakerhetsmognadsbedomning
+
 ## Installation
 
-```bash
-claude plugins install kesekit
+```
+/plugin marketplace add cdppcorp/KESE-KIT
+/plugin install kesekit@cdppcorp-KESE-KIT
 ```
 
 ## Anvandning
 
 ```bash
 # Starta fullstandig sakerhetsutvardering
-/kesekit:start
+/kesekit-start
 
 # Kor checklista fore driftsattning
-/kesekit:check
+/kesekit-check
 
 # Generera hardening-skript
-/kesekit:fix
+/kesekit-fix
 
 # Hamta secure coding-promptar
-/kesekit:guide
+/kesekit-guide
 ```
 
 ---
@@ -82,29 +160,58 @@ claude plugins install kesekit
 KESE-KIT/
 ├── .claude-plugin/
 │   └── marketplace.json              ← Plugin-metadata
-├── skills/                            ← Engelska skills (router)
+├── skills/                            ← Engelska skills
 │   ├── start/
 │   │   ├── SKILL.md                  ← Router (~80 rader)
-│   │   └── references/               ← Kunskap per riktlinje
-│   │       ├── cii/                  ← CII 14 referenser
-│   │       └── ai-security/          ← AI-sakerhet 4 referenser
+│   │   ├── references/               ← Beskrivnings-/kriteriedokument
+│   │   │   ├── ai-security/          ← Oversikt, tjanstleverantorer, anvandarguide
+│   │   │   └── space-security/       ← Oversikt, hotscenarier for leveranskedja
+│   │   ├── templates/                ← Formulir, checklisttabeller
+│   │   │   ├── cii/                  ← CII 14 inspektionstabeller
+│   │   │   ├── ai-security/          ← AI-utvecklare, anvandarchecklistor
+│   │   │   ├── robot-security/       ← 6 robotsakerhetschecklistor
+│   │   │   ├── space-security/       ← 4 rymdsakerhetstabeller
+│   │   │   └── zero-trust/           ← Zero Trust-checklisttabeller
+│   │   └── scripts/                  ← Inspektions-/atgardsskript
+│   │       ├── cii/                  ← bash, PowerShell, SQL
+│   │       └── robot-security/       ← Brandvagg, SBOM, certifikat
 │   ├── check/
 │   ├── fix/
 │   └── guide/
 ├── skills-ko/                         ← Koreanska skills (samma struktur)
-├── authorkit/                         ← Kalldokument och arbetsprodukter
-│   ├── converted/
-│   │   ├── ref-001/                  ← Administrativ/fysisk guide (full.md)
-│   │   ├── ref-002/                  ← Teknisk guide (full.md)
-│   │   └── ref-003/                  ← AI-sakerhetsguide (full.md)
-│   └── ...
 ├── 문서/                              ← Original-PDF:er
+├── authorkit/                         ← Kalldokument och arbetsprodukter
+├── docs/                              ← README pa 20 sprak
 └── README.md
 ```
 
 ---
 
 ## Andringshistorik
+
+### v4.0.0 (2026-04-03)
+
+**Ny riktlinje: Zero Trust-sakerhet — ~421 objekt**
+- Kalla: KISA Zero Trust Guideline 2.0 (245 sid.) + Mognadsmodellguide (182 sid.) + OT-implementeringsguide (67 sid.)
+- 9 karnelement, ~421 checklistobjekt, 4 mognadsnivder
+- Standarder: KISA Zero Trust Guideline 2.0, NIST SP 800-207, CISA ZT Maturity Model
+
+### v3.2.0 (2026-04-02)
+
+**Ny riktlinje: Saker kodning**
+- Kalla: KISA Javascript Secure Coding Guide 159 sid. + Python Secure Coding Guide 176 sid. (2023 ars revision)
+- 7 kategorier, 46 objekt, 49 CWE
+- JavaScript / Python / Pseudo Code (allman)
+
+### v3.0.0 (2026-04-02)
+
+**Breaking Change: Andrat kommandoformat**
+- Alla skills samlade i en enda `kesekit`-namnrymd
+- Kommandoformat: `/start` → `/kesekit-start`
+
+**Ny riktlinje: Rymdsakerhet**
+- Kalla: Space Security Model Part1 134 sid. + Part2 223 sid. + Forklaringsguide 218 sid.
+- 12 omraden, 53 checklistobjekt
 
 ### v2.0.0 (2026-03-30)
 
