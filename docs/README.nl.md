@@ -4,22 +4,22 @@
 
 # KESE - KISA Enhanced Security Evaluation Kit
 
-Een Claude Code skill-plugin voor kwetsbaarheidsanalyse van kritieke informatie-infrastructuur (CII) en AI-beveiligingsevaluatie.
+Een Claude Code skill-plugin voor kwetsbaarheidsanalyse van kritieke informatie-infrastructuur (CII), AI-beveiligingsevaluatie, robotbeveiliging, ruimtevaartbeveiliging, secure coding en Zero Trust-evaluatie.
 
 ---
 
 ## Overzicht
 
-KESE (KISA Enhanced Security Evaluation Kit) is een Claude Code-plugin die uitgebreide mogelijkheden biedt voor kwetsbaarheidsanalyse op basis van de richtlijnen van KISA (Korea Internet & Security Agency). Het ondersteunt zowel evaluaties van kritieke informatie-infrastructuur (CII) als AI-beveiligingsevaluaties.
+KESE (KISA Enhanced Security Evaluation Kit) is een Claude Code-plugin die uitgebreide mogelijkheden biedt voor kwetsbaarheidsanalyse op basis van de richtlijnen van KISA (Korea Internet & Security Agency). Het ondersteunt evaluaties van kritieke informatie-infrastructuur (CII), AI-beveiliging, robotbeveiliging, ruimtevaartbeveiliging, secure coding en Zero Trust-evaluatie.
 
 ## Functies
 
 | Skill | Beschrijving |
 |-------|-------------|
-| `/kesekit-en:start` | Volledige beveiligingskwetsbaarheidsanalyse uitvoeren (CII 560+ items of AI-beveiliging) |
-| `/kesekit-en:check` | Beveiligingschecklist voor compliance voor implementatie |
-| `/kesekit-en:fix` | Automatisch hardening-scripts en beveiligingsoplossingen genereren |
-| `/kesekit-en:guide` | Secure coding-prompts genereren voor AI-tools |
+| `/kesekit-start` | Volledige beveiligingskwetsbaarheidsanalyse uitvoeren (CII 560+ / AI / Robot / Ruimtevaart / Secure Coding / Zero Trust) |
+| `/kesekit-check` | Beveiligingschecklist voor compliance voor implementatie (CII / AI / Robot / Ruimtevaart / Secure Coding / Zero Trust) |
+| `/kesekit-fix` | Automatisch hardening-scripts en beveiligingsoplossingen genereren (CII / AI / Robot / Ruimtevaart / Secure Coding / Zero Trust) |
+| `/kesekit-guide` | Secure coding-prompts genereren voor AI-tools (CII / AI / Robot / Ruimtevaart / JS·Python·Algemeen / Zero Trust) |
 
 ## Ondersteunde richtlijnen
 
@@ -52,26 +52,104 @@ KESE (KISA Enhanced Security Evaluation Kit) is een Claude Code-plugin die uitge
 | AI-serviceprovider | ~43 | 6 fasen (Planning→Ontwikkeling→Beheer→Onderhoud→Feedback→Buitengebruikstelling) |
 | AI-gebruiker | 7 | Beveiligingsrichtlijnen |
 
+### 3. Robotbeveiliging — ~103 items
+
+| Categorie | Code | Aantal items | Referentiestandaard |
+|-----------|------|:------:|---------------------|
+| Veilige SW-ontwikkeling (SSDF) | SSDF-01~19 | 19 | NIST SP 800-218 |
+| Toeleveringsketenbeveiliging | SC-01~07 | 7 | NIST SP 800-161 |
+| Identificatie en authenticatie | IA-01~11 | 11 | IEC 62443 |
+| Gebruikscontrole | UC-01~11 | 11 | IEC 62443 |
+| Systeemintegriteit | SI-01~11 | 11 | IEC 62443 |
+| Gegevensbescherming | DP-01~04 | 4 | IEC 62443 |
+| Beperking gegevensstromen | DFR-01~02 | 2 | IEC 62443 |
+| Incidentrespons | ER-01~03 | 3 | IEC 62443 |
+| Beschikbaarheid van middelen | RA-01~08 | 8 | IEC 62443 |
+| Cyberweerbaarheid | CR-01~13 | 13 | EU CRA |
+| Draadloze beveiliging | WS-01~14 | 14 | EU RED |
+
+Doelgroep: Industriele robots / Servicerobot / Medische robots (ISO 8373)
+
+### 4. Ruimtevaartbeveiliging — 53 items
+
+| Domein | Code | Aantal items | Referentiestandaard |
+|--------|------|:------:|---------------------|
+| Toegangscontrole | AC-01~12 | 12 | CMMC, K-RMF |
+| Identificatie en authenticatie | IA-01~02 | 2 | CMMC, NIS2 |
+| Systeem- en communicatiebeveiliging | SC-01~07 | 7 | NIST IR 8401 |
+| Systeem- en informatie-integriteit | SI-01~04 | 4 | NIST CSF |
+| Systeem-/dienstoperatiebeheer | SO-01~09 | 9 | ISMS-P |
+| Incidentrespons | IR-01~02 | 2 | NIS2 |
+| Personeelsbeveiliging | PS-01~02 | 2 | CMMC |
+| Fysieke beveiliging | PE-01~03 | 3 | K-RMF |
+| Risico- en beveiligingsevaluatie | RA-01~02 | 2 | NIST CSF |
+| Beveiligingsgovernance | SG-01~04 | 4 | ISMS-P |
+| Noodplan | CP-01~02 | 2 | NIST IR 8270 |
+| Toeleveringsketenbeheer | SM-01~04 | 4 | CMMC, NIS2 |
+
+Doelgroep: Satellietoperators, GSaaS-providers, Grondstationoperators, Bedrijven in de ruimtevaarttoeleveringsketen
+
+### 5. Secure coding-gids — 46 items
+
+| Categorie | Aantal items | Aantal CWE | Referentiestandaard |
+|-----------|:------:|:------:|---------------------|
+| Invoervalidatie en -representatie | 16 | 18 | CWE/SANS Top 25, OWASP Top 10 |
+| Beveiligingsfuncties | 16 | 16 | CWE/SANS Top 25 |
+| Tijd en status | 2 | 3 | CWE |
+| Foutafhandeling | 3 | 3 | CWE |
+| Codefouten | 3 | 3 | CWE |
+| Inkapseling | 4 | 5 | CWE |
+| API-misbruik | 2 | 1 | CWE |
+
+**Ondersteunde talen:**
+| Taal | Aantal items | Framework |
+|------|:------:|-----------|
+| Pseudo Code (Algemeen) | 46 | Taalonafhankelijke patronen |
+| JavaScript | 42 | Express.js, Sequelize, Mongoose, Node.js crypto |
+| Python | 46 | Django, Flask, SQLAlchemy, cryptography |
+
+Doelgroep: JavaScript/Python-webontwikkelaars, AI-toolgebruikers (Claude, Cursor, Copilot), Vibe Coding-ontwikkelaars
+
+### 6. Zero Trust-beveiliging — ~421 items
+
+| Kernelement | Code | Aantal items | Volwassenheid |
+|-------------|------|:------:|-------------|
+| Identiteit | ZT-ID-01~53 | 53 | Traditioneel/Initieel/Geavanceerd/Optimaal |
+| Apparaat & Eindpunt | ZT-DV-01~36 | 36 | Traditioneel/Initieel/Geavanceerd/Optimaal |
+| Netwerk | ZT-NW-01~54 | 54 | Traditioneel/Initieel/Geavanceerd/Optimaal |
+| Systeem | ZT-SY-01~49 | 49 | Traditioneel/Initieel/Geavanceerd/Optimaal |
+| Applicatie & Workload | ZT-AP-01~60 | 60 | Traditioneel/Initieel/Geavanceerd/Optimaal |
+| Data | ZT-DA-01~58 | 58 | Traditioneel/Initieel/Geavanceerd/Optimaal |
+| Zichtbaarheid & Analyse | ZT-VA-01~43 | 43 | Traditioneel/Initieel/Geavanceerd/Optimaal |
+| Automatisering & Orkestratie | ZT-AU-01~43 | 43 | Traditioneel/Initieel/Geavanceerd/Optimaal |
+| OT/ICS-specifiek | ZT-OT-01~25 | 25 | Traditioneel/Initieel/Geavanceerd/Optimaal |
+
+**4 volwassenheidsniveaus**: Traditioneel (Traditional) → Initieel (Initial) → Geavanceerd (Advanced) → Optimaal (Optimal)
+**Referentiestandaarden**: KISA Zero Trust Guideline 2.0, NIST SP 800-207, CISA ZT Maturity Model
+
+Doelgroep: Organisaties die Zero Trust implementeren, OT/ICS-omgevingen, Organisaties die naar de cloud migreren, Verantwoordelijken voor beveiligingsvolwassenheidsevaluatie
+
 ## Installatie
 
-```bash
-claude plugins install kesekit-en@kesekit
+```
+/plugin marketplace add cdppcorp/KESE-KIT
+/plugin install kesekit@cdppcorp-KESE-KIT
 ```
 
 ## Gebruik
 
 ```bash
 # Volledige beveiligingsevaluatie starten
-/kesekit-en:start
+/kesekit-start
 
 # Checklist voor implementatie uitvoeren
-/kesekit-en:check
+/kesekit-check
 
 # Hardening-scripts genereren
-/kesekit-en:fix
+/kesekit-fix
 
 # Secure coding-prompts ophalen
-/kesekit-en:guide
+/kesekit-guide
 ```
 
 ---
@@ -82,29 +160,58 @@ claude plugins install kesekit-en@kesekit
 KESE-KIT/
 ├── .claude-plugin/
 │   └── marketplace.json              ← Plugin-metadata
-├── skills/                            ← Engelstalige skills (router)
+├── skills/                            ← Engelstalige skills
 │   ├── start/
 │   │   ├── SKILL.md                  ← Router (~80 regels)
-│   │   └── references/               ← Kennis per richtlijn
-│   │       ├── cii/                  ← CII 14 referenties
-│   │       └── ai-security/          ← AI-beveiliging 4 referenties
+│   │   ├── references/               ← Beschrijvings-/criteriadocumenten
+│   │   │   ├── ai-security/          ← Overzicht, serviceproviders, gebruikersgids
+│   │   │   └── space-security/       ← Overzicht, bedreigingsscenario's toeleveringsketen
+│   │   ├── templates/                ← Formulieren, checklisttabellen
+│   │   │   ├── cii/                  ← CII 14 inspectietabellen
+│   │   │   ├── ai-security/          ← AI-ontwikkelaar, gebruikerchecklists
+│   │   │   ├── robot-security/       ← 6 robotbeveiligingschecklists
+│   │   │   ├── space-security/       ← 4 ruimtevaarttabellen
+│   │   │   └── zero-trust/           ← Zero Trust-checklisttabellen
+│   │   └── scripts/                  ← Inspectie-/herstelscripts
+│   │       ├── cii/                  ← bash, PowerShell, SQL
+│   │       └── robot-security/       ← Firewall, SBOM, certificaten
 │   ├── check/
 │   ├── fix/
 │   └── guide/
 ├── skills-ko/                         ← Koreaanse skills (zelfde structuur)
-├── authorkit/                         ← Brondocumenten en werkproducten
-│   ├── converted/
-│   │   ├── ref-001/                  ← Organisatorische/fysieke gids (full.md)
-│   │   ├── ref-002/                  ← Technische gids (full.md)
-│   │   └── ref-003/                  ← AI-beveiligingsgids (full.md)
-│   └── ...
 ├── 문서/                              ← Originele PDF's
+├── authorkit/                         ← Brondocumenten en werkproducten
+├── docs/                              ← README's in 20 talen
 └── README.md
 ```
 
 ---
 
 ## Wijzigingsgeschiedenis
+
+### v4.0.0 (2026-04-03)
+
+**Nieuwe richtlijn: Zero Trust-beveiliging — ~421 items**
+- Bron: KISA Zero Trust Guideline 2.0 (245 pag.) + Volwassenheidsmodel-gids (182 pag.) + OT-implementatiegids (67 pag.)
+- 9 kernelementen, ~421 checklistitems, 4 volwassenheidsniveaus
+- Standaarden: KISA Zero Trust Guideline 2.0, NIST SP 800-207, CISA ZT Maturity Model
+
+### v3.2.0 (2026-04-02)
+
+**Nieuwe richtlijn: Secure Coding**
+- Bron: KISA Javascript Secure Coding Guide 159 pag. + Python Secure Coding Guide 176 pag. (herziene editie 2023)
+- 7 categorieen, 46 items, 49 CWE
+- JavaScript / Python / Pseudo Code (algemeen)
+
+### v3.0.0 (2026-04-02)
+
+**Breaking Change: Opdrachtformaat gewijzigd**
+- Alle skills samengevoegd in enkele `kesekit`-namespace
+- Opdrachtformaat: `/start` → `/kesekit-start`
+
+**Nieuwe richtlijn: Ruimtevaartbeveiliging**
+- Bron: Space Security Model Part1 134 pag. + Part2 223 pag. + Toelichting 218 pag.
+- 12 domeinen, 53 checklistitems
 
 ### v2.0.0 (2026-03-30)
 

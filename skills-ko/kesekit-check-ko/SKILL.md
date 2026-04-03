@@ -1,0 +1,113 @@
+---
+name: kesekit-check-ko
+description: KISA 가이드라인 기반 배포 전 보안 컴플라이언스 체크리스트를 실행합니다. CII 컴플라이언스(70항목), AI 보안 체크리스트, 로봇 보안 체크리스트, 우주 보안 체크리스트(12분야 53항목)를 지원합니다. "배포 전 점검", "컴플라이언스 체크", "보안 체크리스트", "우주 보안 점검", "위성 보안 체크" 시 사용하세요.
+---
+
+# KESE 배포 전 보안 컴플라이언스 체크리스트
+
+배포 전 보안 점검을 수행합니다. 사용자의 환경에 맞는 가이드라인을 자동 선택합니다.
+
+## 가이드라인 선택
+
+| # | 가이드라인 | 설명 |
+|---|----------|------|
+| 1 | **CII 컴플라이언스** | 주요정보통신기반시설 배포 전 70항목 체크 |
+| 2 | **AI 보안 체크리스트** | AI 개발자/서비스제공자 보안 검증항목 체크 |
+| 3 | **로봇 보안 체크리스트** | 로봇 시스템 11개 카테고리 103항목 체크 |
+| 4 | **우주 보안 체크리스트** | 위성/GSaaS/공급망 12분야 53항목 체크 |
+| 5 | **시큐어코딩 체크리스트** | JavaScript/Python 코드 리뷰 (7개 카테고리, 46 CWE) |
+| 6 | **제로트러스트 체크리스트** | 제로트러스트 성숙도 평가 (8개 핵심요소, 4단계 성숙도, ~396항목) |
+
+서버, 인프라, 웹 서비스 → **CII** / AI 모델, LLM, AI 서비스 → **AI 보안** / 로봇, ROS/ROS2, 의료용 로봇, AMR/AGV → **로봇 보안** / 위성, 지상국, GSaaS, 우주 공급망 → **우주 보안** / JavaScript, Python, 웹 앱 코드 → **시큐어코딩**
+Zero Trust, ZTA, ZTNA, 제로트러스트, 마이크로세그멘테이션, microsegmentation, SDP, SASE, PEP/PDP, never trust always verify → **제로트러스트**
+
+---
+
+## CII 분기 시
+
+대상 환경을 탐지한 후, 해당하는 템플릿 파일을 `templates/cii/`에서 로드하여 체크리스트를 실행합니다. 점검/수정 스크립트는 `scripts/cii/`에 있습니다. 템플릿 파일 목록은 start 스킬과 동일합니다.
+
+### 심각도 수준
+- **긴급**: 배포 차단. 운영 전 반드시 수정
+- **높음**: 수정 필요. 문서화된 위험 수용 시 배포 가능
+- **중간**: 개선 권고. 단기간 내 수정 계획 수립
+- **낮음**: 권장 사항. 배포 차단하지 않음
+
+### 체크 카테고리
+
+1. **계정 보안** (15항목) — root/Admin 원격접속, 패스워드 정책, 계정 잠금
+2. **접근 제어** (15항목) — 파일 권한, 방화벽, 포트, 네트워크 분리
+3. **암호화 및 데이터 보호** (12항목) — HTTPS, TLS, 패스워드 해시, 하드코딩 금지
+4. **로깅 및 모니터링** (10항목) — 시스템 로깅, 인증 로그, 디버그 모드
+5. **서비스 하드닝** (12항목) — 불필요 서비스, 보안 헤더, CSRF, SQLi 방지
+6. **패치 및 업데이트** (6항목) — OS 패치, 프레임워크 업데이트, CVE 점검
+
+### 배포 준비 보고서
+
+```
+============================================================
+     KESE CII 배포 준비 보고서
+============================================================
+프로젝트: [프로젝트명]
+일시: [날짜]
+
+요약: 전체 [N]항목 / 통과 [N] / 실패 [N] / 건너뜀 [N]
+배포 결정: [승인 / 차단 / 조건부]
+============================================================
+```
+
+---
+
+## AI 보안 분기 시
+
+`references/ai-security/` 및 `templates/ai-security/` 디렉터리에서 대상에 해당하는 파일을 로드합니다.
+
+### AI 개발자 체크리스트
+`templates/ai-security/developer.md`를 로드하여 6단계 생명주기별 54개 검증항목을 점검합니다.
+
+### AI 서비스 제공자 체크리스트
+`references/ai-security/service-provider.md`를 로드하여 서비스 운영 관점의 보안 요구사항을 점검합니다.
+
+### AI 이용자 체크리스트
+`references/ai-security/user-guide.md`를 로드하여 7개 보안 수칙 이행 여부를 점검합니다.
+
+---
+
+## 로봇 보안 분기 시
+
+`templates/robot-security/` 디렉터리에서 관련 템플릿을 로드합니다. 먼저 `overview.md`를 읽고, 로봇 유형과 통신 인터페이스, 적용 표준에 따라 `ssdf.md`, `supply-chain.md`, `iec62443.md`, `cyber-resilience.md`, `wireless.md` 중 필요한 파일을 선택합니다.
+
+---
+
+## 시큐어코딩 분기 시
+
+`references/secure-coding/overview.md`에서 카테고리/CWE 매핑을 로드한 후, `templates/secure-coding/javascript.md` 또는 `templates/secure-coding/python.md`로 언어별 체크리스트를 실행합니다. 기타 언어는 `references/secure-coding/pseudocode.md`를 사용합니다.
+
+우선순위: 긴급 (8항목) → 높음 (13항목) → 보통 (25항목). 긴급 CWE가 발견되면 배포를 차단합니다.
+
+---
+
+## 제로트러스트 분기 시
+
+`references/zero-trust/`에서 아키텍처 참조와 성숙도 모델을, `templates/zero-trust/`에서 핵심요소별 체크리스트를 로드합니다. `templates/zero-trust/overview.md`부터 시작하여 시스템 맥락에 맞는 핵심요소를 선택합니다. OT/ICS 환경이 감지되면 `templates/zero-trust/ot-environment.md`도 로드합니다.
+
+| 주제 | reference 파일 |
+|------|---------------|
+| 개요 | `templates/zero-trust/overview.md` |
+| 식별자 및 디바이스 | `templates/zero-trust/identity-device.md` |
+| 네트워크 및 시스템 | `templates/zero-trust/network-system.md` |
+| 애플리케이션 및 데이터 | `templates/zero-trust/app-data.md` |
+| 가시성 및 자동화 | `templates/zero-trust/visibility-automation.md` |
+| OT/ICS 환경 | `templates/zero-trust/ot-environment.md` |
+| ZT 아키텍처 참조 | `references/zero-trust/overview.md` |
+| 성숙도 모델 상세 | `references/zero-trust/maturity-model.md` |
+| OT 배포 가이드 | `references/zero-trust/ot-guide.md` |
+
+8개 핵심요소, ~396개 항목, 4단계 성숙도. 표준: KISA 제로트러스트 가이드라인 2.0, NIST SP 800-207, CISA ZT Maturity Model.
+
+---
+
+## 중요 규칙
+- 긴급 심각도 항목은 절대 건너뛰지 마세요
+- 수정을 위한 구체적인 파일 경로와 명령어를 제공하세요
+- 통과율이 60% 미만이면 배포를 강력히 권고하지 않습니다

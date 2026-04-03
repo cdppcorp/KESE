@@ -4,22 +4,22 @@
 
 # KESE - KISA Enhanced Security Evaluation Kit
 
-Wtyczka Claude Code do analizy i oceny podatnosci Krytycznej Infrastruktury Informacyjnej (CII) oraz oceny bezpieczenstwa AI zgodnie z wytycznymi KISA (Koreanska Agencja Internetu i Bezpieczenstwa).
+Wtyczka Claude Code do analizy i oceny podatnosci Krytycznej Infrastruktury Informacyjnej (CII), oceny bezpieczenstwa AI, bezpieczenstwa robotow, bezpieczenstwa kosmicznego, bezpiecznego kodowania oraz oceny Zero Trust zgodnie z wytycznymi KISA (Koreanska Agencja Internetu i Bezpieczenstwa).
 
 ---
 
 ## Przegląd
 
-KESE (KISA Enhanced Security Evaluation Kit) to wtyczka Claude Code zapewniająca kompleksowe możliwości oceny podatności bezpieczeństwa w oparciu o wytyczne KISA (Koreańska Agencja Internetu i Bezpieczeństwa). Obsługuje zarówno ocenę Krytycznej Infrastruktury Informacyjnej (CII), jak i ocenę Bezpieczeństwa AI.
+KESE (KISA Enhanced Security Evaluation Kit) to wtyczka Claude Code zapewniająca kompleksowe możliwości oceny podatności bezpieczeństwa w oparciu o wytyczne KISA (Koreańska Agencja Internetu i Bezpieczeństwa). Obsługuje ocenę Krytycznej Infrastruktury Informacyjnej (CII), Bezpieczeństwa AI, Bezpieczeństwa Robotów, Bezpieczeństwa Kosmicznego, Bezpiecznego Kodowania oraz ocenę Zero Trust.
 
 ## Funkcje
 
 | Umiejętność | Opis |
 |-------------|------|
-| `/kesekit-en:start` | Uruchomienie pełnej oceny podatności bezpieczeństwa (CII 560+ pozycji lub AI Security) |
-| `/kesekit-en:check` | Lista kontrolna zgodności bezpieczeństwa przed wdrożeniem |
-| `/kesekit-en:fix` | Automatyczne generowanie skryptów utwardzających i poprawek bezpieczeństwa |
-| `/kesekit-en:guide` | Generowanie promptów bezpiecznego kodowania dla narzędzi AI |
+| `/kesekit-start` | Uruchomienie pełnej oceny podatności bezpieczeństwa (CII 560+ / AI / Roboty / Kosmos / Bezpieczne kodowanie / Zero Trust) |
+| `/kesekit-check` | Lista kontrolna zgodności bezpieczeństwa przed wdrożeniem (CII / AI / Roboty / Kosmos / Bezpieczne kodowanie / Zero Trust) |
+| `/kesekit-fix` | Automatyczne generowanie skryptów utwardzających i poprawek bezpieczeństwa (CII / AI / Roboty / Kosmos / Bezpieczne kodowanie / Zero Trust) |
+| `/kesekit-guide` | Generowanie promptów bezpiecznego kodowania dla narzędzi AI (CII / AI / Roboty / Kosmos / JS·Python·Ogólny / Zero Trust) |
 
 ## Obsługiwane wytyczne
 
@@ -52,26 +52,104 @@ KESE (KISA Enhanced Security Evaluation Kit) to wtyczka Claude Code zapewniając
 | Dostawcy usług AI | ~43 | 6 etapów (Planowanie→Rozwój→Eksploatacja→Utrzymanie→Informacja zwrotna→Wycofanie) |
 | Użytkownicy AI | 7 | Najlepsze praktyki bezpieczeństwa |
 
+### 3. Bezpieczeństwo robotów — ~103 pozycji
+
+| Kategoria | Kod | Liczba pozycji | Standard referencyjny |
+|-----------|-----|:-------------:|----------------------|
+| Bezpieczne tworzenie oprogramowania (SSDF) | SSDF-01~19 | 19 | NIST SP 800-218 |
+| Bezpieczeństwo łańcucha dostaw | SC-01~07 | 7 | NIST SP 800-161 |
+| Identyfikacja i uwierzytelnianie | IA-01~11 | 11 | IEC 62443 |
+| Kontrola użytkowania | UC-01~11 | 11 | IEC 62443 |
+| Integralność systemu | SI-01~11 | 11 | IEC 62443 |
+| Ochrona danych | DP-01~04 | 4 | IEC 62443 |
+| Ograniczenie przepływu danych | DFR-01~02 | 2 | IEC 62443 |
+| Reagowanie na zdarzenia | ER-01~03 | 3 | IEC 62443 |
+| Dostępność zasobów | RA-01~08 | 8 | IEC 62443 |
+| Odporność cybernetyczna | CR-01~13 | 13 | EU CRA |
+| Bezpieczeństwo bezprzewodowe | WS-01~14 | 14 | EU RED |
+
+Cel: Roboty przemysłowe / Roboty usługowe / Roboty medyczne (ISO 8373)
+
+### 4. Bezpieczeństwo kosmiczne — 53 pozycji
+
+| Dziedzina | Kod | Liczba pozycji | Standard referencyjny |
+|-----------|-----|:-------------:|----------------------|
+| Kontrola dostępu | AC-01~12 | 12 | CMMC, K-RMF |
+| Identyfikacja i uwierzytelnianie | IA-01~02 | 2 | CMMC, NIS2 |
+| Bezpieczeństwo systemu i komunikacji | SC-01~07 | 7 | NIST IR 8401 |
+| Integralność systemu i informacji | SI-01~04 | 4 | NIST CSF |
+| Zarządzanie operacjami systemu/usług | SO-01~09 | 9 | ISMS-P |
+| Reagowanie na incydenty | IR-01~02 | 2 | NIS2 |
+| Bezpieczeństwo personelu | PS-01~02 | 2 | CMMC |
+| Bezpieczeństwo fizyczne | PE-01~03 | 3 | K-RMF |
+| Ocena ryzyka i bezpieczeństwa | RA-01~02 | 2 | NIST CSF |
+| Zarządzanie bezpieczeństwem | SG-01~04 | 4 | ISMS-P |
+| Plan awaryjny | CP-01~02 | 2 | NIST IR 8270 |
+| Zarządzanie łańcuchem dostaw | SM-01~04 | 4 | CMMC, NIS2 |
+
+Cel: Operatorzy satelitów, Dostawcy GSaaS, Operatorzy stacji naziemnych, Firmy w łańcuchu dostaw kosmicznego
+
+### 5. Przewodnik bezpiecznego kodowania — 46 pozycji
+
+| Kategoria | Liczba pozycji | Liczba CWE | Standard referencyjny |
+|-----------|:-------------:|:--------:|----------------------|
+| Walidacja i reprezentacja danych wejściowych | 16 | 18 | CWE/SANS Top 25, OWASP Top 10 |
+| Funkcje bezpieczeństwa | 16 | 16 | CWE/SANS Top 25 |
+| Czas i stan | 2 | 3 | CWE |
+| Obsługa błędów | 3 | 3 | CWE |
+| Błędy kodu | 3 | 3 | CWE |
+| Enkapsulacja | 4 | 5 | CWE |
+| Nadużycie API | 2 | 1 | CWE |
+
+**Obsługiwane języki:**
+| Język | Liczba pozycji | Framework |
+|-------|:-------------:|-----------|
+| Pseudo Code (Ogólny) | 46 | Wzorce niezależne od języka |
+| JavaScript | 42 | Express.js, Sequelize, Mongoose, Node.js crypto |
+| Python | 46 | Django, Flask, SQLAlchemy, cryptography |
+
+Cel: Programiści webowi JavaScript/Python, Użytkownicy narzędzi AI (Claude, Cursor, Copilot), Programiści Vibe Coding
+
+### 6. Bezpieczeństwo Zero Trust — ~421 pozycji
+
+| Element podstawowy | Kod | Liczba pozycji | Dojrzałość |
+|-------------------|-----|:-------------:|-----------|
+| Tożsamość | ZT-ID-01~53 | 53 | Tradycyjny/Początkowy/Zaawansowany/Optymalny |
+| Urządzenia i punkty końcowe | ZT-DV-01~36 | 36 | Tradycyjny/Początkowy/Zaawansowany/Optymalny |
+| Sieć | ZT-NW-01~54 | 54 | Tradycyjny/Początkowy/Zaawansowany/Optymalny |
+| System | ZT-SY-01~49 | 49 | Tradycyjny/Początkowy/Zaawansowany/Optymalny |
+| Aplikacja i obciążenie robocze | ZT-AP-01~60 | 60 | Tradycyjny/Początkowy/Zaawansowany/Optymalny |
+| Dane | ZT-DA-01~58 | 58 | Tradycyjny/Początkowy/Zaawansowany/Optymalny |
+| Widoczność i analityka | ZT-VA-01~43 | 43 | Tradycyjny/Początkowy/Zaawansowany/Optymalny |
+| Automatyzacja i orkiestracja | ZT-AU-01~43 | 43 | Tradycyjny/Początkowy/Zaawansowany/Optymalny |
+| Specyficzny dla OT/ICS | ZT-OT-01~25 | 25 | Tradycyjny/Początkowy/Zaawansowany/Optymalny |
+
+**4 poziomy dojrzałości**: Tradycyjny (Traditional) → Początkowy (Initial) → Zaawansowany (Advanced) → Optymalny (Optimal)
+**Standardy referencyjne**: KISA Zero Trust Guideline 2.0, NIST SP 800-207, CISA ZT Maturity Model
+
+Cel: Organizacje wdrażające Zero Trust, Środowiska OT/ICS, Organizacje migrujące do chmury, Osoby odpowiedzialne za ocenę dojrzałości bezpieczeństwa
+
 ## Instalacja
 
-```bash
-claude plugins install kesekit-en@kesekit
+```
+/plugin marketplace add cdppcorp/KESE-KIT
+/plugin install kesekit@cdppcorp-KESE-KIT
 ```
 
 ## Użycie
 
 ```bash
 # Rozpoczęcie pełnej oceny bezpieczeństwa
-/kesekit-en:start
+/kesekit-start
 
 # Uruchomienie listy kontrolnej przed wdrożeniem
-/kesekit-en:check
+/kesekit-check
 
 # Generowanie skryptów utwardzających
-/kesekit-en:fix
+/kesekit-fix
 
 # Uzyskanie promptów bezpiecznego kodowania
-/kesekit-en:guide
+/kesekit-guide
 ```
 
 ---
@@ -82,29 +160,58 @@ claude plugins install kesekit-en@kesekit
 KESE-KIT/
 ├── .claude-plugin/
 │   └── marketplace.json              ← Metadane wtyczki
-├── skills/                            ← Umiejętności angielskie (router)
+├── skills/                            ← Umiejętności angielskie
 │   ├── start/
 │   │   ├── SKILL.md                  ← Router (~80 linii)
-│   │   └── references/               ← Baza wiedzy według wytycznych
-│   │       ├── cii/                  ← 14 referencji CII
-│   │       └── ai-security/          ← 4 referencje bezpieczeństwa AI
+│   │   ├── references/               ← Dokumenty opisowe/kryteria
+│   │   │   ├── ai-security/          ← Przegląd, dostawcy usług, przewodnik użytkownika
+│   │   │   └── space-security/       ← Przegląd, scenariusze zagrożeń łańcucha dostaw
+│   │   ├── templates/                ← Formularze, tabele list kontrolnych
+│   │   │   ├── cii/                  ← 14 tabel kontrolnych CII
+│   │   │   ├── ai-security/          ← Listy kontrolne programistów AI, użytkowników
+│   │   │   ├── robot-security/       ← 6 list kontrolnych bezpieczeństwa robotów
+│   │   │   ├── space-security/       ← 4 tabele kontrolne kosmiczne
+│   │   │   └── zero-trust/           ← Tabele list kontrolnych Zero Trust
+│   │   └── scripts/                  ← Skrypty kontrolne/naprawcze
+│   │       ├── cii/                  ← bash, PowerShell, SQL
+│   │       └── robot-security/       ← Firewall, SBOM, certyfikaty
 │   ├── check/
 │   ├── fix/
 │   └── guide/
 ├── skills-ko/                         ← Umiejętności koreańskie (ta sama struktura)
-├── authorkit/                         ← Dokumenty źródłowe i wyniki prac
-│   ├── converted/
-│   │   ├── ref-001/                  ← Przewodnik administracyjny i fizyczny (full.md)
-│   │   ├── ref-002/                  ← Przewodnik techniczny (full.md)
-│   │   └── ref-003/                  ← Przewodnik bezpieczeństwa AI (full.md)
-│   └── ...
 ├── 문서/                              ← Oryginalne pliki PDF
+├── authorkit/                         ← Dokumenty źródłowe i wyniki prac
+├── docs/                              ← README w 20 językach
 └── README.md
 ```
 
 ---
 
 ## Historia zmian
+
+### v4.0.0 (2026-04-03)
+
+**Nowe wytyczne: Bezpieczeństwo Zero Trust — ~421 pozycji**
+- Źródło: KISA Zero Trust Guideline 2.0 (245 str.) + Przewodnik modelu dojrzałości (182 str.) + Przewodnik wdrożenia OT (67 str.)
+- 9 elementów podstawowych, ~421 pozycji list kontrolnych, 4 poziomy dojrzałości
+- Standardy: KISA Zero Trust Guideline 2.0, NIST SP 800-207, CISA ZT Maturity Model
+
+### v3.2.0 (2026-04-02)
+
+**Nowe wytyczne: Bezpieczne kodowanie**
+- Źródło: KISA Javascript Secure Coding Guide 159 str. + Python Secure Coding Guide 176 str. (rewizja 2023)
+- 7 kategorii, 46 pozycji, 49 CWE
+- JavaScript / Python / Pseudo Code (ogólny)
+
+### v3.0.0 (2026-04-02)
+
+**Breaking Change: Zmiana formatu poleceń**
+- Wszystkie umiejętności połączone w jedną przestrzeń nazw `kesekit`
+- Format poleceń: `/start` → `/kesekit-start`
+
+**Nowe wytyczne: Bezpieczeństwo kosmiczne**
+- Źródło: Space Security Model Part1 134 str. + Part2 223 str. + Przewodnik objaśniający 218 str.
+- 12 dziedzin, 53 pozycji list kontrolnych
 
 ### v2.0.0 (2026-03-30)
 

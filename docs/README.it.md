@@ -4,22 +4,22 @@
 
 # KESE - KISA Enhanced Security Evaluation Kit
 
-Plugin per Claude Code dedicato alla valutazione delle vulnerabilita delle Infrastrutture Critiche Informatiche (CII) e alla valutazione della sicurezza dell'IA, basato sulle linee guida della KISA (Agenzia Coreana per Internet e la Sicurezza).
+Plugin per Claude Code dedicato alla valutazione delle vulnerabilita delle Infrastrutture Critiche Informatiche (CII), alla valutazione della sicurezza dell'IA, alla sicurezza robotica, alla sicurezza spaziale, alla guida alla codifica sicura e alla valutazione della sicurezza Zero Trust, basato sulle linee guida della KISA (Agenzia Coreana per Internet e la Sicurezza).
 
 ---
 
 ## Panoramica
 
-KESE (KISA Enhanced Security Evaluation Kit) e un plugin per Claude Code che fornisce funzionalita complete di valutazione delle vulnerabilita di sicurezza basate sulle linee guida della KISA (Agenzia Coreana per Internet e la Sicurezza). Supporta sia le valutazioni delle Infrastrutture Critiche Informatiche (CII) sia le valutazioni della Sicurezza dell'IA.
+KESE (KISA Enhanced Security Evaluation Kit) e un plugin per Claude Code che fornisce funzionalita complete di valutazione delle vulnerabilita di sicurezza basate sulle linee guida della KISA (Agenzia Coreana per Internet e la Sicurezza). Supporta le valutazioni delle Infrastrutture Critiche Informatiche (CII), della Sicurezza dell'IA, della Sicurezza Robotica, della Sicurezza Spaziale, della Codifica Sicura e della Sicurezza Zero Trust.
 
 ## Funzionalita
 
 | Skill | Descrizione |
 |-------|-------------|
-| `/kesekit-en:start` | Eseguire la valutazione completa delle vulnerabilita di sicurezza (CII 560+ elementi o Sicurezza IA) |
-| `/kesekit-en:check` | Checklist di conformita di sicurezza pre-distribuzione |
-| `/kesekit-en:fix` | Generare automaticamente script di hardening e correzioni di sicurezza |
-| `/kesekit-en:guide` | Generare prompt di codifica sicura per strumenti di IA |
+| `/kesekit-start` | Eseguire la valutazione completa delle vulnerabilita di sicurezza (CII 560+ / Sicurezza IA / Sicurezza Robotica / Sicurezza Spaziale / Codifica Sicura / Zero Trust) |
+| `/kesekit-check` | Checklist di conformita di sicurezza pre-distribuzione (CII / IA / Robot / Spazio / Codifica Sicura / Zero Trust) |
+| `/kesekit-fix` | Generare automaticamente script di hardening e correzioni di sicurezza (CII / IA / Robot / Spazio / Codifica Sicura / Zero Trust) |
+| `/kesekit-guide` | Generare prompt di codifica sicura per strumenti di IA (CII / IA / Robot / Spazio / JS·Python·Generico / Zero Trust) |
 
 ## Linee Guida Supportate
 
@@ -52,26 +52,104 @@ KESE (KISA Enhanced Security Evaluation Kit) e un plugin per Claude Code che for
 | Fornitore di Servizi | ~43 | 6 fasi (Pianificazione→Sviluppo→Operazioni→Manutenzione→Feedback→Dismissione) |
 | Utente | 7 | Best practice di sicurezza |
 
+### 3. Sicurezza Robotica — ~103 elementi
+
+| Categoria | Codice | Elementi | Standard di Riferimento |
+|-----------|--------|:--------:|------------------------|
+| Sviluppo SW sicuro (SSDF) | SSDF-01~19 | 19 | NIST SP 800-218 |
+| Sicurezza della catena di fornitura | SC-01~07 | 7 | NIST SP 800-161 |
+| Identificazione e autenticazione | IA-01~11 | 11 | IEC 62443 |
+| Controllo d'uso | UC-01~11 | 11 | IEC 62443 |
+| Integrita del sistema | SI-01~11 | 11 | IEC 62443 |
+| Protezione dei dati | DP-01~04 | 4 | IEC 62443 |
+| Limitazione del flusso dati | DFR-01~02 | 2 | IEC 62443 |
+| Risposta agli eventi | ER-01~03 | 3 | IEC 62443 |
+| Disponibilita delle risorse | RA-01~08 | 8 | IEC 62443 |
+| Resilienza informatica | CR-01~13 | 13 | EU CRA |
+| Sicurezza wireless | WS-01~14 | 14 | EU RED |
+
+Destinatari: Robot industriali / di servizio / medici (ISO 8373)
+
+### 4. Sicurezza Spaziale — 53 elementi
+
+| Area | Codice | Elementi | Standard di Riferimento |
+|------|--------|:--------:|------------------------|
+| Controllo accessi | AC-01~12 | 12 | CMMC, K-RMF |
+| Identificazione e autenticazione | IA-01~02 | 2 | CMMC, NIS2 |
+| Sicurezza sistemi e comunicazioni | SC-01~07 | 7 | NIST IR 8401 |
+| Integrita sistemi e informazioni | SI-01~04 | 4 | NIST CSF |
+| Gestione operativa sistemi/servizi | SO-01~09 | 9 | ISMS-P |
+| Risposta agli incidenti | IR-01~02 | 2 | NIS2 |
+| Sicurezza del personale | PS-01~02 | 2 | CMMC |
+| Sicurezza fisica | PE-01~03 | 3 | K-RMF |
+| Valutazione dei rischi e della sicurezza | RA-01~02 | 2 | NIST CSF |
+| Governance della sicurezza | SG-01~04 | 4 | ISMS-P |
+| Piani di emergenza | CP-01~02 | 2 | NIST IR 8270 |
+| Gestione della catena di fornitura | SM-01~04 | 4 | CMMC, NIS2 |
+
+Destinatari: Operatori satellitari, fornitori GSaaS, operatori di stazioni di terra, aziende della catena di fornitura spaziale
+
+### 5. Guida alla Codifica Sicura — 46 elementi
+
+| Categoria | Elementi | CWE | Standard di Riferimento |
+|-----------|:--------:|:---:|------------------------|
+| Validazione e rappresentazione dati di input | 16 | 18 | CWE/SANS Top 25, OWASP Top 10 |
+| Funzionalita di sicurezza | 16 | 16 | CWE/SANS Top 25 |
+| Tempo e stato | 2 | 3 | CWE |
+| Gestione errori | 3 | 3 | CWE |
+| Errori di codice | 3 | 3 | CWE |
+| Incapsulamento | 4 | 5 | CWE |
+| Uso improprio delle API | 2 | 1 | CWE |
+
+**Linguaggi supportati:**
+| Linguaggio | Elementi | Framework |
+|------------|:--------:|-----------|
+| Pseudo Code (generico) | 46 | Pattern indipendenti dal linguaggio |
+| JavaScript | 42 | Express.js, Sequelize, Mongoose, Node.js crypto |
+| Python | 46 | Django, Flask, SQLAlchemy, cryptography |
+
+Destinatari: Sviluppatori web JavaScript/Python, utenti di strumenti IA (Claude, Cursor, Copilot), sviluppatori vibe coding
+
+### 6. Sicurezza Zero Trust — ~421 elementi
+
+| Elemento Fondamentale | Codice | Elementi | Maturita |
+|-----------------------|--------|:--------:|----------|
+| Identita | ZT-ID-01~53 | 53 | Tradizionale/Iniziale/Avanzato/Ottimale |
+| Dispositivi ed Endpoint | ZT-DV-01~36 | 36 | Tradizionale/Iniziale/Avanzato/Ottimale |
+| Rete | ZT-NW-01~54 | 54 | Tradizionale/Iniziale/Avanzato/Ottimale |
+| Sistema | ZT-SY-01~49 | 49 | Tradizionale/Iniziale/Avanzato/Ottimale |
+| Applicazioni e Carichi di Lavoro | ZT-AP-01~60 | 60 | Tradizionale/Iniziale/Avanzato/Ottimale |
+| Dati | ZT-DA-01~58 | 58 | Tradizionale/Iniziale/Avanzato/Ottimale |
+| Visibilita e Analisi | ZT-VA-01~43 | 43 | Tradizionale/Iniziale/Avanzato/Ottimale |
+| Automazione e Orchestrazione | ZT-AU-01~43 | 43 | Tradizionale/Iniziale/Avanzato/Ottimale |
+| Specifico OT/ICS | ZT-OT-01~25 | 25 | Tradizionale/Iniziale/Avanzato/Ottimale |
+
+**4 livelli di maturita**: Tradizionale → Iniziale → Avanzato → Ottimale
+**Standard di riferimento**: KISA Zero Trust Guideline 2.0, NIST SP 800-207, CISA ZT Maturity Model
+
+Destinatari: Aziende che adottano Zero Trust, ambienti OT/ICS, organizzazioni in migrazione cloud, responsabili della valutazione della maturita della sicurezza
+
 ## Installazione
 
-```bash
-claude plugins install kesekit-en@kesekit
+```
+/plugin marketplace add cdppcorp/KESE-KIT
+/plugin install kesekit@cdppcorp-KESE-KIT
 ```
 
 ## Utilizzo
 
 ```bash
 # Avviare la valutazione completa di sicurezza
-/kesekit-en:start
+/kesekit-start
 
 # Eseguire la checklist pre-distribuzione
-/kesekit-en:check
+/kesekit-check
 
 # Generare script di hardening
-/kesekit-en:fix
+/kesekit-fix
 
 # Ottenere prompt di codifica sicura
-/kesekit-en:guide
+/kesekit-guide
 ```
 
 ---
@@ -82,29 +160,62 @@ claude plugins install kesekit-en@kesekit
 KESE-KIT/
 ├── .claude-plugin/
 │   └── marketplace.json              ← Metadati del plugin
-├── skills/                            ← Skill in inglese (router)
+├── skills/                            ← Skill in inglese
 │   ├── start/
 │   │   ├── SKILL.md                  ← Router (~80 righe)
-│   │   └── references/               ← Conoscenze per linea guida
-│   │       ├── cii/                  ← 14 riferimenti CII
-│   │       └── ai-security/          ← 4 riferimenti Sicurezza IA
+│   │   ├── references/               ← Documenti descrittivi/normativi
+│   │   │   ├── ai-security/          ← Panoramica, fornitori, guida utente
+│   │   │   └── space-security/       ← Panoramica, scenari di minaccia
+│   │   ├── templates/                ← Moduli, tabelle checklist
+│   │   │   ├── cii/                  ← 14 tabelle di verifica CII
+│   │   │   ├── ai-security/          ← Verifica sviluppatore IA, checklist utente
+│   │   │   ├── robot-security/       ← 6 checklist sicurezza robotica
+│   │   │   ├── space-security/       ← 4 tabelle verifica sicurezza spaziale
+│   │   │   └── zero-trust/           ← Tabelle verifica Zero Trust
+│   │   └── scripts/                  ← Script di verifica/correzione eseguibili
+│   │       ├── cii/                  ← Script bash, PowerShell, SQL
+│   │       └── robot-security/       ← Script firewall, SBOM, certificati
 │   ├── check/
 │   ├── fix/
 │   └── guide/
 ├── skills-ko/                         ← Skill in coreano (stessa struttura)
-├── authorkit/                         ← Documenti originali e artefatti di lavoro
-│   ├── converted/
-│   │   ├── ref-001/                  ← Guida amministrativa/fisica (full.md)
-│   │   ├── ref-002/                  ← Guida tecnica (full.md)
-│   │   └── ref-003/                  ← Guida Sicurezza IA (full.md)
-│   └── ...
 ├── 문서/                              ← PDF originali
+├── authorkit/                         ← Documenti originali e artefatti di lavoro
+├── docs/                              ← README in 20 lingue
+├── CONTRIBUTING.md                    ← Come aggiungere linee guida
 └── README.md
 ```
 
 ---
 
 ## Registro delle Modifiche
+
+### v4.0.0 (2026-04-03)
+
+**Nuova Linea Guida Aggiunta: Sicurezza Zero Trust**
+- Fonte: KISA Zero Trust Guideline 2.0 (245p) + Modello di Maturita Zero Trust (182p) + Guida Zero Trust per OT (67p)
+- 9 elementi fondamentali, ~421 voci di verifica, 4 livelli di maturita
+- Supporto OT/ICS specifico (ZT-OT-01~25)
+- Standard: KISA Zero Trust Guideline 2.0, NIST SP 800-207, CISA ZT Maturity Model
+
+### v3.2.0 (2026-04-02)
+
+**Nuova Linea Guida Aggiunta: Guida alla Codifica Sicura**
+- Fonte: KISA Javascript Secure Coding Guide 159p + Python Secure Coding Guide 176p (revisione 2023)
+- 7 categorie, 46 elementi, 49 CWE mappati
+- Guida Pseudo Code generica di nuova creazione (pattern UNSAFE/SAFE indipendenti dal linguaggio)
+- Esempi di codice per framework JavaScript (Express.js, Sequelize, Node.js) / Python (Django, Flask, SQLAlchemy)
+
+### v3.0.0 (2026-04-02)
+
+**Modifica incompatibile: formato dei comandi aggiornato**
+- Tutti gli skill unificati sotto il namespace `kesekit`
+- Formato comandi: `/start` → `/kesekit-start` (prefisso namespace aggiunto)
+
+**Nuova Linea Guida Aggiunta: Sicurezza Spaziale**
+- Fonte: Modello di Sicurezza Spaziale Part1 134p + Part2 223p + Guida Esplicativa 218p (MSIT/KISA)
+- 12 aree, 53 voci di checklist
+- Destinatari: Operatori satellitari, fornitori GSaaS, operatori stazioni di terra
 
 ### v2.0.0 (2026-03-30)
 
