@@ -4,7 +4,7 @@
 
 # KESE - KISA Enhanced Security Evaluation Kit
 
-Plugin do Claude Code para avaliacao de vulnerabilidades em Infraestruturas Criticas de Informacao (CII), avaliacao de seguranca de IA, inspecao de seguranca de robos, inspecao de seguranca espacial, guia de codificacao segura e avaliacao de seguranca Zero Trust.
+Plugin do Claude Code para avaliacao de vulnerabilidades em Infraestruturas Criticas de Informacao (CII), avaliacao de seguranca de IA, inspecao de seguranca de robos, inspecao de seguranca espacial, guia de codificacao segura, avaliacao de seguranca Zero Trust e seguranca da cadeia de suprimentos SW (SBOM).
 
 ---
 
@@ -16,10 +16,10 @@ KESE (KISA Enhanced Security Evaluation Kit) e um plugin do Claude Code que ofer
 
 | Skill | Descricao |
 |-------|-----------|
-| `/kesekit-start` | Executar avaliacao completa de vulnerabilidades de seguranca (CII 560+ / Seguranca de IA / Seguranca de robos / Seguranca espacial / Codificacao segura / Zero Trust) |
-| `/kesekit-check` | Lista de verificacao de conformidade de seguranca pre-implantacao (CII / IA / Robos / Espaco / Codificacao segura / Zero Trust) |
-| `/kesekit-fix` | Gerar automaticamente scripts de hardening e correcoes de seguranca (CII / IA / Robos / Espaco / Codificacao segura / Zero Trust) |
-| `/kesekit-guide` | Gerar prompts de codificacao segura para ferramentas de IA (CII / IA / Robos / Espaco / JS·Python·Generico / Zero Trust) |
+| `/kesekit-start` | Executar avaliacao completa de vulnerabilidades de seguranca (CII 560+ / Seguranca de IA / Seguranca de robos / Seguranca espacial / Codificacao segura / Zero Trust / Cadeia de suprimentos SW) |
+| `/kesekit-check` | Lista de verificacao de conformidade de seguranca pre-implantacao (CII / IA / Robos / Espaco / Codificacao segura / Zero Trust / Cadeia de suprimentos SW) |
+| `/kesekit-fix` | Gerar automaticamente scripts de hardening e correcoes de seguranca (CII / IA / Robos / Espaco / Codificacao segura / Zero Trust / Cadeia de suprimentos SW) |
+| `/kesekit-guide` | Gerar prompts de codificacao segura para ferramentas de IA (CII / IA / Robos / Espaco / JS·Python·Generico / Zero Trust / Cadeia de suprimentos SW) |
 
 ## Diretrizes Suportadas
 
@@ -128,6 +128,16 @@ Publico-alvo: desenvolvedores web JavaScript/Python, usuarios de ferramentas IA 
 **Padroes de referencia**: KISA Zero Trust Guideline 2.0, NIST SP 800-207, CISA ZT Maturity Model
 
 Publico-alvo: empresas adotando Zero Trust, ambientes OT/ICS, organizacoes em migracao para nuvem, responsaveis por avaliacao de maturidade de seguranca
+
+### 7. Seguranca da cadeia de suprimentos SW (SBOM) — 29 itens
+
+| Fase | Codigo | Itens | Padroes de referencia |
+|------|--------|:-----:|------------------------|
+| Projeto | SC-01~05 | 5 | NIST SP 800-161r1 |
+| Desenvolvimento | SC-06~16 | 11 | NIST SP 800-218 |
+| Fornecimento/Distribuicao | SC-17~19 | 3 | NTIA SBOM |
+| Implantacao e operacoes | SC-20~26 | 7 | NIS-SBOM |
+| Manutencao | SC-27~29 | 3 | NIS-SBOM |
 
 ## Instalacao
 

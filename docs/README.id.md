@@ -4,7 +4,7 @@
 
 # KESE - KISA Enhanced Security Evaluation Kit
 
-Plugin Claude Code untuk analisis dan evaluasi kerentanan Infrastruktur Informasi Kritis (CII), evaluasi keamanan AI, keamanan robot, keamanan ruang angkasa, panduan secure coding, dan evaluasi Zero Trust berdasarkan pedoman KISA (Badan Internet dan Keamanan Korea).
+Plugin Claude Code untuk analisis dan evaluasi kerentanan Infrastruktur Informasi Kritis (CII), evaluasi keamanan AI, keamanan robot, keamanan ruang angkasa, panduan secure coding, evaluasi Zero Trust, dan Keamanan Rantai Pasokan SW (SBOM) berdasarkan pedoman KISA (Badan Internet dan Keamanan Korea).
 
 ---
 
@@ -16,10 +16,10 @@ KESE (KISA Enhanced Security Evaluation Kit) adalah plugin Claude Code yang meny
 
 | Skill | Deskripsi |
 |-------|-----------|
-| `/kesekit-start` | Menjalankan penilaian kerentanan keamanan lengkap (CII 560+ / AI / Robot / Ruang Angkasa / Secure Coding / Zero Trust) |
-| `/kesekit-check` | Daftar periksa kepatuhan keamanan sebelum deployment (CII / AI / Robot / Ruang Angkasa / Secure Coding / Zero Trust) |
-| `/kesekit-fix` | Menghasilkan skrip hardening dan perbaikan keamanan secara otomatis (CII / AI / Robot / Ruang Angkasa / Secure Coding / Zero Trust) |
-| `/kesekit-guide` | Membuat prompt secure coding untuk alat AI (CII / AI / Robot / Ruang Angkasa / JS·Python·Umum / Zero Trust) |
+| `/kesekit-start` | Menjalankan penilaian kerentanan keamanan lengkap (CII 560+ / AI / Robot / Ruang Angkasa / Secure Coding / Zero Trust / Rantai Pasokan SW) |
+| `/kesekit-check` | Daftar periksa kepatuhan keamanan sebelum deployment (CII / AI / Robot / Ruang Angkasa / Secure Coding / Zero Trust / Rantai Pasokan SW) |
+| `/kesekit-fix` | Menghasilkan skrip hardening dan perbaikan keamanan secara otomatis (CII / AI / Robot / Ruang Angkasa / Secure Coding / Zero Trust / Rantai Pasokan SW) |
+| `/kesekit-guide` | Membuat prompt secure coding untuk alat AI (CII / AI / Robot / Ruang Angkasa / JS·Python·Umum / Zero Trust / Rantai Pasokan SW) |
 
 ## Pedoman yang Didukung
 
@@ -128,6 +128,16 @@ Target: Pengembang web JavaScript/Python, Pengguna alat AI (Claude, Cursor, Copi
 **Standar Referensi**: KISA Zero Trust Guideline 2.0, NIST SP 800-207, CISA ZT Maturity Model
 
 Target: Organisasi yang mengadopsi Zero Trust, Lingkungan OT/ICS, Organisasi yang bermigrasi ke cloud, Penilai kematangan keamanan
+
+### 7. Keamanan Rantai Pasokan SW (SBOM) — 29 item
+
+| Fase | Kode | Jumlah Item | Standar |
+|------|------|:----------:|---------|
+| Desain | SC-01~05 | 5 | NIST SP 800-161r1 |
+| Pengembangan | SC-06~16 | 11 | NIST SP 800-218 |
+| Pasokan/Distribusi | SC-17~19 | 3 | NTIA SBOM |
+| Deployment & Operasi | SC-20~26 | 7 | NIS-SBOM |
+| Pemeliharaan | SC-27~29 | 3 | NIS-SBOM |
 
 ## Instalasi
 

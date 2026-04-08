@@ -4,7 +4,7 @@
 
 # KESE - KISA Enhanced Security Evaluation Kit
 
-Een Claude Code skill-plugin voor kwetsbaarheidsanalyse van kritieke informatie-infrastructuur (CII), AI-beveiligingsevaluatie, robotbeveiliging, ruimtevaartbeveiliging, secure coding en Zero Trust-evaluatie.
+Een Claude Code skill-plugin voor kwetsbaarheidsanalyse van kritieke informatie-infrastructuur (CII), AI-beveiligingsevaluatie, robotbeveiliging, ruimtevaartbeveiliging, secure coding, Zero Trust-evaluatie en SW-toeleveringsketenbeveiliging (SBOM).
 
 ---
 
@@ -16,10 +16,10 @@ KESE (KISA Enhanced Security Evaluation Kit) is een Claude Code-plugin die uitge
 
 | Skill | Beschrijving |
 |-------|-------------|
-| `/kesekit-start` | Volledige beveiligingskwetsbaarheidsanalyse uitvoeren (CII 560+ / AI / Robot / Ruimtevaart / Secure Coding / Zero Trust) |
-| `/kesekit-check` | Beveiligingschecklist voor compliance voor implementatie (CII / AI / Robot / Ruimtevaart / Secure Coding / Zero Trust) |
-| `/kesekit-fix` | Automatisch hardening-scripts en beveiligingsoplossingen genereren (CII / AI / Robot / Ruimtevaart / Secure Coding / Zero Trust) |
-| `/kesekit-guide` | Secure coding-prompts genereren voor AI-tools (CII / AI / Robot / Ruimtevaart / JS·Python·Algemeen / Zero Trust) |
+| `/kesekit-start` | Volledige beveiligingskwetsbaarheidsanalyse uitvoeren (CII 560+ / AI / Robot / Ruimtevaart / Secure Coding / Zero Trust / SW-toeleveringsketen) |
+| `/kesekit-check` | Beveiligingschecklist voor compliance voor implementatie (CII / AI / Robot / Ruimtevaart / Secure Coding / Zero Trust / SW-toeleveringsketen) |
+| `/kesekit-fix` | Automatisch hardening-scripts en beveiligingsoplossingen genereren (CII / AI / Robot / Ruimtevaart / Secure Coding / Zero Trust / SW-toeleveringsketen) |
+| `/kesekit-guide` | Secure coding-prompts genereren voor AI-tools (CII / AI / Robot / Ruimtevaart / JS·Python·Algemeen / Zero Trust / SW-toeleveringsketen) |
 
 ## Ondersteunde richtlijnen
 
@@ -128,6 +128,16 @@ Doelgroep: JavaScript/Python-webontwikkelaars, AI-toolgebruikers (Claude, Cursor
 **Referentiestandaarden**: KISA Zero Trust Guideline 2.0, NIST SP 800-207, CISA ZT Maturity Model
 
 Doelgroep: Organisaties die Zero Trust implementeren, OT/ICS-omgevingen, Organisaties die naar de cloud migreren, Verantwoordelijken voor beveiligingsvolwassenheidsevaluatie
+
+### 7. SW-toeleveringsketenbeveiliging (SBOM) — 29 items
+
+| Fase | Code | Aantal items | Standaard |
+|------|------|:------:|-----------|
+| Ontwerp | SC-01~05 | 5 | NIST SP 800-161r1 |
+| Ontwikkeling | SC-06~16 | 11 | NIST SP 800-218 |
+| Levering/Distributie | SC-17~19 | 3 | NTIA SBOM |
+| Implementatie & Beheer | SC-20~26 | 7 | NIS-SBOM |
+| Onderhoud | SC-27~29 | 3 | NIS-SBOM |
 
 ## Installatie
 

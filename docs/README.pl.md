@@ -4,7 +4,7 @@
 
 # KESE - KISA Enhanced Security Evaluation Kit
 
-Wtyczka Claude Code do analizy i oceny podatnosci Krytycznej Infrastruktury Informacyjnej (CII), oceny bezpieczenstwa AI, bezpieczenstwa robotow, bezpieczenstwa kosmicznego, bezpiecznego kodowania oraz oceny Zero Trust zgodnie z wytycznymi KISA (Koreanska Agencja Internetu i Bezpieczenstwa).
+Wtyczka Claude Code do analizy i oceny podatnosci Krytycznej Infrastruktury Informacyjnej (CII), oceny bezpieczenstwa AI, bezpieczenstwa robotow, bezpieczenstwa kosmicznego, bezpiecznego kodowania, oceny Zero Trust oraz Bezpieczenstwa lancucha dostaw SW (SBOM) zgodnie z wytycznymi KISA (Koreanska Agencja Internetu i Bezpieczenstwa).
 
 ---
 
@@ -16,10 +16,10 @@ KESE (KISA Enhanced Security Evaluation Kit) to wtyczka Claude Code zapewniając
 
 | Umiejętność | Opis |
 |-------------|------|
-| `/kesekit-start` | Uruchomienie pełnej oceny podatności bezpieczeństwa (CII 560+ / AI / Roboty / Kosmos / Bezpieczne kodowanie / Zero Trust) |
-| `/kesekit-check` | Lista kontrolna zgodności bezpieczeństwa przed wdrożeniem (CII / AI / Roboty / Kosmos / Bezpieczne kodowanie / Zero Trust) |
-| `/kesekit-fix` | Automatyczne generowanie skryptów utwardzających i poprawek bezpieczeństwa (CII / AI / Roboty / Kosmos / Bezpieczne kodowanie / Zero Trust) |
-| `/kesekit-guide` | Generowanie promptów bezpiecznego kodowania dla narzędzi AI (CII / AI / Roboty / Kosmos / JS·Python·Ogólny / Zero Trust) |
+| `/kesekit-start` | Uruchomienie pełnej oceny podatności bezpieczeństwa (CII 560+ / AI / Roboty / Kosmos / Bezpieczne kodowanie / Zero Trust / Łańcuch dostaw SW) |
+| `/kesekit-check` | Lista kontrolna zgodności bezpieczeństwa przed wdrożeniem (CII / AI / Roboty / Kosmos / Bezpieczne kodowanie / Zero Trust / Łańcuch dostaw SW) |
+| `/kesekit-fix` | Automatyczne generowanie skryptów utwardzających i poprawek bezpieczeństwa (CII / AI / Roboty / Kosmos / Bezpieczne kodowanie / Zero Trust / Łańcuch dostaw SW) |
+| `/kesekit-guide` | Generowanie promptów bezpiecznego kodowania dla narzędzi AI (CII / AI / Roboty / Kosmos / JS·Python·Ogólny / Zero Trust / Łańcuch dostaw SW) |
 
 ## Obsługiwane wytyczne
 
@@ -128,6 +128,16 @@ Cel: Programiści webowi JavaScript/Python, Użytkownicy narzędzi AI (Claude, C
 **Standardy referencyjne**: KISA Zero Trust Guideline 2.0, NIST SP 800-207, CISA ZT Maturity Model
 
 Cel: Organizacje wdrażające Zero Trust, Środowiska OT/ICS, Organizacje migrujące do chmury, Osoby odpowiedzialne za ocenę dojrzałości bezpieczeństwa
+
+### 7. Bezpieczeństwo łańcucha dostaw SW (SBOM) — 29 pozycji
+
+| Faza | Kod | Liczba pozycji | Standard |
+|------|-----|:-------------:|----------|
+| Projektowanie | SC-01~05 | 5 | NIST SP 800-161r1 |
+| Rozwój | SC-06~16 | 11 | NIST SP 800-218 |
+| Dostawa/Dystrybucja | SC-17~19 | 3 | NTIA SBOM |
+| Wdrożenie i eksploatacja | SC-20~26 | 7 | NIS-SBOM |
+| Utrzymanie | SC-27~29 | 3 | NIS-SBOM |
 
 ## Instalacja
 

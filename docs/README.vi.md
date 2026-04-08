@@ -4,7 +4,7 @@
 
 # KESE - KISA Enhanced Security Evaluation Kit
 
-Plugin ky nang Claude Code danh cho phan tich-danh gia lo hong Ha tang Thong tin Trong yeu (CII), danh gia bao mat AI, bao mat robot, bao mat khong gian, huong dan lap trinh an toan va danh gia bao mat Zero Trust.
+Plugin ky nang Claude Code danh cho phan tich-danh gia lo hong Ha tang Thong tin Trong yeu (CII), danh gia bao mat AI, bao mat robot, bao mat khong gian, huong dan lap trinh an toan, danh gia bao mat Zero Trust va Bao mat chuoi cung ung SW (SBOM).
 
 ---
 
@@ -16,10 +16,10 @@ KESE (KISA Enhanced Security Evaluation Kit) la mot plugin Claude Code cung cap 
 
 | Ky nang | Mo ta |
 |---------|-------|
-| `/kesekit-start` | Chay danh gia lo hong bao mat toan dien (CII 560+ / Bao mat AI / Bao mat Robot / Bao mat Khong gian / Lap trinh An toan / Zero Trust) |
-| `/kesekit-check` | Danh sach kiem tra tuan thu bao mat truoc trien khai (CII / AI / Robot / Khong gian / Lap trinh An toan / Zero Trust) |
-| `/kesekit-fix` | Tu dong tao script tang cuong bao mat va ban va lo hong (CII / AI / Robot / Khong gian / Lap trinh An toan / Zero Trust) |
-| `/kesekit-guide` | Tao prompt lap trinh an toan cho cac cong cu AI (CII / AI / Robot / Khong gian / JS·Python·Chung / Zero Trust) |
+| `/kesekit-start` | Chay danh gia lo hong bao mat toan dien (CII 560+ / Bao mat AI / Bao mat Robot / Bao mat Khong gian / Lap trinh An toan / Zero Trust / Chuoi cung ung SW) |
+| `/kesekit-check` | Danh sach kiem tra tuan thu bao mat truoc trien khai (CII / AI / Robot / Khong gian / Lap trinh An toan / Zero Trust / Chuoi cung ung SW) |
+| `/kesekit-fix` | Tu dong tao script tang cuong bao mat va ban va lo hong (CII / AI / Robot / Khong gian / Lap trinh An toan / Zero Trust / Chuoi cung ung SW) |
+| `/kesekit-guide` | Tao prompt lap trinh an toan cho cac cong cu AI (CII / AI / Robot / Khong gian / JS·Python·Chung / Zero Trust / Chuoi cung ung SW) |
 
 ## Huong dan duoc ho tro
 
@@ -128,6 +128,16 @@ Doi tuong: Nha phat trien web JavaScript/Python, nguoi dung cong cu AI (Claude, 
 **Tieu chuan Tham chieu**: KISA Zero Trust Guideline 2.0, NIST SP 800-207, CISA ZT Maturity Model
 
 Doi tuong: Doanh nghiep ap dung Zero Trust, moi truong OT/ICS, to chuc chuyen doi dam may, nguoi phu trach danh gia muc do truong thanh bao mat
+
+### 7. Bao mat chuoi cung ung SW (SBOM) — 29 hang muc
+
+| Giai doan | Ma | Hang muc | Tieu chuan |
+|-----------|-----|:--------:|------------|
+| Thiet ke | SC-01~05 | 5 | NIST SP 800-161r1 |
+| Phat trien | SC-06~16 | 11 | NIST SP 800-218 |
+| Cung ung/Phan phoi | SC-17~19 | 3 | NTIA SBOM |
+| Trien khai va Van hanh | SC-20~26 | 7 | NIS-SBOM |
+| Bao tri | SC-27~29 | 3 | NIS-SBOM |
 
 ## Cai dat
 

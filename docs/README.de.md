@@ -4,7 +4,7 @@
 
 # KESE - KISA Enhanced Security Evaluation Kit
 
-Ein Claude Code-Plugin zur Schwachstellenanalyse und -bewertung kritischer Informationsinfrastrukturen (CII), KI-Sicherheitsbewertung, Roboter-Sicherheitspruefung, Weltraum-Sicherheitspruefung, Secure-Coding-Leitfaden und Zero-Trust-Sicherheitsbewertung.
+Ein Claude Code-Plugin zur Schwachstellenanalyse und -bewertung kritischer Informationsinfrastrukturen (CII), KI-Sicherheitsbewertung, Roboter-Sicherheitspruefung, Weltraum-Sicherheitspruefung, Secure-Coding-Leitfaden, Zero-Trust-Sicherheitsbewertung und SW-Lieferkettensicherheit (SBOM).
 
 ---
 
@@ -16,10 +16,10 @@ KESE (KISA Enhanced Security Evaluation Kit) ist ein Claude Code-Plugin, das umf
 
 | Skill | Beschreibung |
 |-------|--------------|
-| `/kesekit-start` | Vollstaendige Sicherheits-Schwachstellenbewertung ausfuehren (CII 560+ / KI-Sicherheit / Roboter-Sicherheit / Weltraum-Sicherheit / Secure Coding / Zero Trust) |
-| `/kesekit-check` | Sicherheits-Compliance-Checkliste vor der Bereitstellung (CII / KI / Roboter / Weltraum / Secure Coding / Zero Trust) |
-| `/kesekit-fix` | Automatische Generierung von Haertungsskripten und Sicherheitskorrekturen (CII / KI / Roboter / Weltraum / Secure Coding / Zero Trust) |
-| `/kesekit-guide` | Sichere Coding-Prompts fuer KI-Werkzeuge generieren (CII / KI / Roboter / Weltraum / JS·Python·Generisch / Zero Trust) |
+| `/kesekit-start` | Vollstaendige Sicherheits-Schwachstellenbewertung ausfuehren (CII 560+ / KI-Sicherheit / Roboter-Sicherheit / Weltraum-Sicherheit / Secure Coding / Zero Trust / SW-Lieferkette) |
+| `/kesekit-check` | Sicherheits-Compliance-Checkliste vor der Bereitstellung (CII / KI / Roboter / Weltraum / Secure Coding / Zero Trust / SW-Lieferkette) |
+| `/kesekit-fix` | Automatische Generierung von Haertungsskripten und Sicherheitskorrekturen (CII / KI / Roboter / Weltraum / Secure Coding / Zero Trust / SW-Lieferkette) |
+| `/kesekit-guide` | Sichere Coding-Prompts fuer KI-Werkzeuge generieren (CII / KI / Roboter / Weltraum / JS·Python·Generisch / Zero Trust / SW-Lieferkette) |
 
 ## Unterstuetzte Richtlinien
 
@@ -128,6 +128,16 @@ Zielgruppe: JavaScript/Python-Webentwickler, KI-Tool-Nutzer (Claude, Cursor, Cop
 **Referenzstandards**: KISA Zero Trust Guideline 2.0, NIST SP 800-207, CISA ZT Maturity Model
 
 Zielgruppe: Unternehmen mit Zero-Trust-Einfuehrung, OT/ICS-Umgebungen, Cloud-Migrationsorganisationen, Verantwortliche fuer Sicherheitsreifegradbeurteilung
+
+### 7. SW-Lieferkettensicherheit (SBOM) — 29 Elemente
+
+| Phase | Code | Elemente | Referenzstandards |
+|-------|------|:--------:|-------------------|
+| Entwurf | SC-01~05 | 5 | NIST SP 800-161r1 |
+| Entwicklung | SC-06~16 | 11 | NIST SP 800-218 |
+| Lieferung/Verteilung | SC-17~19 | 3 | NTIA SBOM |
+| Bereitstellung und Betrieb | SC-20~26 | 7 | NIS-SBOM |
+| Wartung | SC-27~29 | 3 | NIS-SBOM |
 
 ## Installation
 
