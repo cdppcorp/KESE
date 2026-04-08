@@ -370,6 +370,27 @@
 
 ---
 
+## 디지털헬스케어 보안
+
+| 한글 | 영문 | 약어 | 비고 |
+|------|------|------|------|
+| 디지털헬스케어 | Digital Healthcare | DHC | ICT+헬스케어 융합 산업 |
+| 개인건강기록 | Personal Health Record | PHR | 개인 건강 데이터 |
+| 전자의무기록 | Electronic Medical Record | EMR | 의료기관 진료기록 |
+| 전자건강기록 | Electronic Health Record | EHR | 통합 건강기록 |
+| 영상저장전송시스템 | Picture Archiving and Communication System | PACS | 의료영상 시스템 |
+| 처방전달시스템 | Order Communication System | OCS | 병원 처방 전달 |
+| 개인의료정보 | Protected Health Information | PHI | 보호 대상 의료정보 |
+| 디지털치료제 | Digital Therapeutics | DTx | 소프트웨어 기반 의료기기 |
+| 비식별화 | De-identification | - | 개인정보 익명화 처리 |
+| 부인방지 | Non-repudiation | - | 의료행위 부인 방지 |
+| 난독화 | Obfuscation | - | 소스코드 분석 방지 |
+| 수탁사 | Data Processing Subcontractor | - | 개인정보보호법상 수탁자 |
+| 생체신호 | Biosignal | - | 웨어러블 생체 데이터 |
+| 식품의약품안전처 | Ministry of Food and Drug Safety | MFDS | 의료기기 사이버보안 허가 |
+
+---
+
 ## 사용 규칙
 
 1. **첫 등장**: 전체 형식 사용
@@ -381,7 +402,8 @@
 3. **새 용어 추가 시**: 이 파일에 등록 후 사용
 4. **점검 항목 코드**: 본문에서 `U-01`, `W-02`, `AC-01` 형식으로 직접 사용 가능
 5. **CWE 코드**: 본문에서 `CWE-89` 형식으로 직접 사용 가능
+6. **디지털헬스케어 보안요구사항 코드**: 본문에서 `1.1.1`, `2.1` 등 형식으로 직접 사용 가능
 
 ---
 
-*최종 업데이트: 2026-04-02 (ref-011/012 시큐어코딩 가이드 용어 추가)*
+*최종 업데이트: 2026-04-08 (dhc-part1/part2 디지털헬스케어 보안 용어 추가)*
