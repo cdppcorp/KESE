@@ -1,6 +1,6 @@
 ---
 name: kesekit-guide
-description: Generate secure coding prompts and guides for AI tools (Claude, ChatGPT, Cursor, Copilot). Creates copy-paste ready prompts for KISA CII, AI security, robot security, and space security (CCSDS, satellite protocols, GSaaS, supply chain). Use when "security guide", "secure coding guide", "AI secure coding", "robot secure coding", "space secure coding", "satellite security guide".
+description: Generate secure coding prompts and guides for AI tools (Claude, ChatGPT, Cursor, Copilot). Creates copy-paste ready prompts for KISA CII, AI security, robot security, space security, and SW supply chain security (SBOM, C-SCRM). Use when "security guide", "secure coding guide", "AI secure coding", "robot secure coding", "space secure coding", "satellite security guide", "supply chain guide", "SBOM guide", "공급망 가이드".
 ---
 
 # KESE Secure Coding Prompt Generator
@@ -17,8 +17,10 @@ Generate secure coding prompts based on KISA guidelines and international standa
 | 4 | **Space Security Coding** | Space-specific (CCSDS, satellite protocols, GSaaS, supply chain) |
 | 5 | **Secure Coding (Language)** | Language-specific secure coding (JS, Python, pseudo code) |
 | 6 | **Zero Trust Guide** | Zero Trust architecture and maturity assessment guide (8 elements, ~396 items) |
+| 7 | **SW Supply Chain Guide** | SBOM, C-SCRM, supply chain security prompts (29 items) |
 
 Zero Trust, ZTA, ZTNA, 제로트러스트, 마이크로세그멘테이션, microsegmentation, SDP, SASE, PEP/PDP, never trust always verify → **Zero Trust**
+SBOM, supply chain, 공급망, C-SCRM, SCA, CycloneDX, SPDX, npm audit, pip-audit → **SW Supply Chain**
 
 ## CII Branch
 
@@ -63,6 +65,17 @@ Reference `references/zero-trust/overview.md` for ZT architecture and `reference
 | OT Deployment Guide | `references/zero-trust/ot-guide.md` |
 
 8 core elements, ~396 items across 4 maturity levels. Standards: KISA ZT Guideline 2.0, NIST SP 800-207, CISA ZT Maturity Model.
+
+---
+
+## SW Supply Chain Branch
+
+Reference `references/supply-chain/overview.md` for C-SCRM framework, SBOM standards, and regulatory landscape. Use `templates/supply-chain/sbom-checklist.md` for the 29-item checklist. Generate prompts for: SBOM generation (Syft, CycloneDX), vulnerability scanning (Grype, npm audit, pip-audit), CI/CD pipeline integration, license compliance, and NIS-SBOM compliance.
+
+### Auto-detection
+- npm, yarn, pip, maven, gradle, cargo → language-specific SBOM prompts
+- CI/CD, GitHub Actions, GitLab CI → pipeline integration prompts
+- Government/public sector delivery → NIS-SBOM compliance prompts
 
 ---
 

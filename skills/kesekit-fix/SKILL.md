@@ -1,6 +1,6 @@
 ---
 name: kesekit-fix
-description: Auto-fix security vulnerabilities found in CII, AI, robot, and space systems. Generates hardening scripts for Unix/Linux, Windows, web servers, databases, AI, robot, and space infrastructure (satellite/GSaaS/ground station). Use when "fix vulnerabilities", "apply hardening", "server hardening", "AI security fix", "robot security fix", "space security fix", "satellite hardening", "GSaaS hardening".
+description: Auto-fix security vulnerabilities found in CII, AI, robot, space, and supply chain systems. Generates hardening scripts and SBOM-based vulnerability remediation. Use when "fix vulnerabilities", "apply hardening", "server hardening", "AI security fix", "robot security fix", "space security fix", "satellite hardening", "GSaaS hardening", "supply chain fix", "SBOM fix", "공급망 수정", "취약점 조치".
 ---
 
 # KESE Vulnerability Auto-Fix
@@ -17,8 +17,10 @@ Generate and apply fixes based on vulnerability assessment results. Auto-selects
 | 4 | **Space Security Fixes** | Space system hardening (CMMC, K-RMF, NIS2, NIST IR 8401) |
 | 5 | **Secure Coding Fixes** | Auto-fix vulnerable code patterns (JS/Python, 46 CWE) |
 | 6 | **Zero Trust Fixes** | Zero Trust gap remediation (8 elements, 4 maturity levels, ~396 items) |
+| 7 | **SW Supply Chain Fixes** | SBOM generation, vulnerability scanning, remediation (29 items) |
 
 Zero Trust, ZTA, ZTNA, 제로트러스트, 마이크로세그멘테이션, microsegmentation, SDP, SASE, PEP/PDP, never trust always verify → **Zero Trust**
+SBOM, supply chain, 공급망, C-SCRM, SCA, CycloneDX, SPDX, npm audit, pip-audit → **SW Supply Chain**
 
 ## CII Branch
 
@@ -59,6 +61,14 @@ Load from `references/zero-trust/` for maturity model and architecture, and `tem
 | OT Deployment Guide | `references/zero-trust/ot-guide.md` |
 
 8 core elements, ~396 items across 4 maturity levels. Standards: KISA ZT Guideline 2.0, NIST SP 800-207, CISA ZT Maturity Model.
+
+---
+
+## SW Supply Chain Branch
+
+Load from `references/supply-chain/overview.md` for C-SCRM/SBOM context. Use `scripts/supply-chain/sbom-generate.md` for SBOM generation commands (Syft, CycloneDX, language-specific tools). Use `scripts/supply-chain/sbom-vuln-scan.md` for vulnerability scanning (Grype, npm audit, pip-audit, govulncheck) and license compliance checks. Reference `templates/supply-chain/sbom-checklist.md` for the 29-item remediation checklist.
+
+Fix workflow: Generate SBOM → Scan vulnerabilities → Prioritize by CVSS → Apply patches → Verify → Update SBOM.
 
 ---
 
