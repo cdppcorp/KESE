@@ -1,6 +1,6 @@
 ---
 name: kesekit-start
-description: Run a security vulnerability assessment based on KISA guidelines. Supports CII (560+ items), AI Security Guide, Robot Security (103 items), Space Security (satellite/GSaaS/supply chain, 12 domains, 53 items), and Zero Trust (~396 items). Use when "security assessment", "vulnerability scan", "CII audit", "KISA assessment", "AI security", "robot security", "space security", "satellite security", "GSaaS security", "zero trust", "ZTA", "ZTNA".
+description: Run a security vulnerability assessment based on KISA guidelines. Supports CII (560+ items), AI Security Guide, Robot Security (103 items), Space Security (satellite/GSaaS/supply chain, 12 domains, 53 items), Secure Coding (46 CWE), Zero Trust (~396 items), and SW Supply Chain Security (SBOM, 29 items). Use when "security assessment", "vulnerability scan", "CII audit", "KISA assessment", "AI security", "robot security", "space security", "satellite security", "GSaaS security", "zero trust", "ZTA", "ZTNA", "supply chain", "SBOM", "공급망", "C-SCRM".
 ---
 
 # KESE Security Vulnerability Assessment
@@ -17,6 +17,7 @@ Perform comprehensive security vulnerability assessment based on KISA guidelines
 | 4 | **Space Security** | Satellite/GSaaS/Supply chain checklist (12 domains) | 53 |
 | 5 | **Secure Coding** | JavaScript/Python secure coding (7 categories, 46 CWE) | 46 |
 | 6 | **Zero Trust** | Zero Trust maturity assessment (8 elements, 4 maturity levels) | ~396 |
+| 7 | **SW Supply Chain** | SBOM-based supply chain security (5 phases, 29 items) | 29 |
 
 ### Auto-detection
 - Servers, networks, databases, web services, firewalls → **CII**
@@ -25,6 +26,7 @@ Perform comprehensive security vulnerability assessment based on KISA guidelines
 - Satellites, ground stations, GSaaS, space systems, GNSS, VSAT, LEO constellation, space supply chain → **Space Security**
 - JavaScript, Python, web application code, secure coding, CWE, OWASP → **Secure Coding**
 - Zero Trust, ZTA, ZTNA, 제로트러스트, 마이크로세그멘테이션, microsegmentation, SDP, SASE, PEP/PDP, never trust always verify → **Zero Trust**
+- SBOM, supply chain, 공급망, C-SCRM, SCA, CycloneDX, SPDX, npm audit, pip-audit, software bill of materials, 소프트웨어 공급망 → **SW Supply Chain**
 
 ---
 
@@ -151,6 +153,30 @@ Read from `references/zero-trust/` for overview and maturity model, and `templat
 3. If OT/ICS detected, also load `ot-environment.md`
 4. Assess items at or below target maturity level
 5. Generate gap analysis report
+
+---
+
+## SW Supply Chain Branch
+
+Read from `references/supply-chain/` for overview and threat scenarios, and `templates/supply-chain/` for assessment checklists. Use `scripts/supply-chain/` for SBOM generation and vulnerability scanning commands.
+
+| Topic | Reference File |
+|-------|---------------|
+| Overview (C-SCRM, SBOM, Regulations) | `references/supply-chain/overview.md` |
+| Assessment Overview (6 categories) | `templates/supply-chain/overview.md` |
+| Self-Assessment Checklist (29 items) | `templates/supply-chain/sbom-checklist.md` |
+| SBOM Generation Scripts | `scripts/supply-chain/sbom-generate.md` |
+| Vulnerability Scanning Scripts | `scripts/supply-chain/sbom-vuln-scan.md` |
+
+5 phases: Design (5) → Development (11) → Supply (3) → Operations (7) → Maintenance (3). Standards: NIST SP 800-161r1 (C-SCRM), NIST SP 800-218 (SSDF), NTIA SBOM, NIS-SBOM.
+
+### Assessment Flow
+1. Start with `references/supply-chain/overview.md` for context
+2. Load `templates/supply-chain/sbom-checklist.md` for the 29-item checklist
+3. Assess each phase (Design → Development → Supply → Operations → Maintenance)
+4. Critical items (SC-10, SC-14, SC-15) must ALL pass
+5. Use `scripts/supply-chain/sbom-generate.md` for SBOM creation commands
+6. Use `scripts/supply-chain/sbom-vuln-scan.md` for vulnerability scanning
 
 ---
 

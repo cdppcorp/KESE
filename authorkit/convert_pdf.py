@@ -37,9 +37,15 @@ def extract_pdf_to_markdown(pdf_path, output_dir, ref_id):
                 xref = img[0]
                 pix = fitz.Pixmap(doc, xref)
 
-                # Convert CMYK to RGB if needed
-                if pix.n >= 5:
+                # Convert non-RGB colorspaces to RGB
+                if pix.colorspace and pix.colorspace.n >= 4:
                     pix = fitz.Pixmap(fitz.csRGB, pix)
+                elif pix.n - pix.alpha > 3:
+                    pix = fitz.Pixmap(fitz.csRGB, pix)
+
+                # Remove alpha channel if present
+                if pix.alpha:
+                    pix = fitz.Pixmap(pix, 0)
 
                 img_filename = f"p{page_num+1:04d}_img{img_idx}.png"
                 img_path = os.path.join(images_dir, img_filename)
@@ -50,7 +56,17 @@ def extract_pdf_to_markdown(pdf_path, output_dir, ref_id):
                 text += f"\n\n![이미지 {page_num+1}-{img_idx}](images/{img_filename})\n"
 
             except Exception as e:
-                print(f"  Warning: Could not extract image on page {page_num+1}: {e}")
+                # Fallback: render the page as image
+                try:
+                    page_pix = page.get_pixmap(dpi=150)
+                    img_filename = f"p{page_num+1:04d}_full.png"
+                    img_path = os.path.join(images_dir, img_filename)
+                    if not os.path.exists(img_path):
+                        page_pix.save(img_path)
+                        image_count += 1
+                        text += f"\n\n![페이지 {page_num+1} 렌더링](images/{img_filename})\n"
+                except Exception as e2:
+                    print(f"  Warning: Could not extract image on page {page_num+1}: {e} / fallback: {e2}")
 
         # Detect headings (lines that are likely headers)
         lines = text.split('\n')

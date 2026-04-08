@@ -1,6 +1,6 @@
 ---
 name: kesekit-check
-description: Run a pre-deployment security compliance checklist based on KISA guidelines. Supports CII compliance (70 items), AI security checklists, Robot Security (103 items), and Space Security (12 domains, 53 items). Use when "pre-deploy check", "compliance checklist", "security checklist", "AI security check", "robot security check", "space security check", "satellite compliance", "GSaaS check".
+description: Run a pre-deployment security compliance checklist based on KISA guidelines. Supports CII compliance (70 items), AI security checklists, Robot Security (103 items), Space Security (12 domains, 53 items), SW Supply Chain (SBOM, 29 items). Use when "pre-deploy check", "compliance checklist", "security checklist", "AI security check", "robot security check", "space security check", "satellite compliance", "GSaaS check", "supply chain check", "SBOM check", "공급망 점검".
 ---
 
 # KESE Pre-Deployment Security Compliance Checklist
@@ -17,9 +17,11 @@ Run pre-deployment security checks. Auto-selects guideline based on user context
 | 4 | **Space Security Checklist** | Satellite/GSaaS/supply chain 12 domains, 53 items |
 | 5 | **Secure Coding Checklist** | JavaScript/Python code review (7 categories, 46 CWE) |
 | 6 | **Zero Trust Checklist** | Zero Trust maturity assessment (8 elements, 4 maturity levels, ~396 items) |
+| 7 | **SW Supply Chain Checklist** | SBOM-based supply chain security (5 phases, 29 items) |
 
 Servers, infrastructure → **CII** / AI models, LLM → **AI Security** / robots, ROS/ROS2 → **Robot Security** / satellites, ground stations, GSaaS, space supply chain → **Space Security** / JavaScript, Python, web app code → **Secure Coding**
 Zero Trust, ZTA, ZTNA, 제로트러스트, 마이크로세그멘테이션, microsegmentation, SDP, SASE, PEP/PDP, never trust always verify → **Zero Trust**
+SBOM, supply chain, 공급망, C-SCRM, SCA, CycloneDX, SPDX, npm audit, pip-audit → **SW Supply Chain**
 
 ---
 
@@ -70,6 +72,14 @@ Load from `references/zero-trust/` for overview and maturity model, and `templat
 | OT Deployment Guide | `references/zero-trust/ot-guide.md` |
 
 8 core elements, ~396 items across 4 maturity levels. Standards: KISA ZT Guideline 2.0, NIST SP 800-207, CISA ZT Maturity Model.
+
+---
+
+## SW Supply Chain Branch
+
+Load from `references/supply-chain/overview.md` for context, then use `templates/supply-chain/sbom-checklist.md` for the 29-item pre-deployment checklist. Use `scripts/supply-chain/sbom-generate.md` and `scripts/supply-chain/sbom-vuln-scan.md` for verification commands.
+
+5 phases: Design (5) → Development (11) → Supply (3) → Operations (7) → Maintenance (3). Critical items: SC-10, SC-14, SC-15 must ALL pass. Block deployment if any Critical item fails. Standards: NIST SP 800-161r1, NIST SP 800-218, NTIA SBOM, NIS-SBOM.
 
 ---
 

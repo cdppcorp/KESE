@@ -4,7 +4,7 @@
 
 # KESE - KISA Enhanced Security Evaluation Kit
 
-Plugin per Claude Code dedicato alla valutazione delle vulnerabilita delle Infrastrutture Critiche Informatiche (CII), alla valutazione della sicurezza dell'IA, alla sicurezza robotica, alla sicurezza spaziale, alla guida alla codifica sicura e alla valutazione della sicurezza Zero Trust, basato sulle linee guida della KISA (Agenzia Coreana per Internet e la Sicurezza).
+Plugin per Claude Code dedicato alla valutazione delle vulnerabilita delle Infrastrutture Critiche Informatiche (CII), alla valutazione della sicurezza dell'IA, alla sicurezza robotica, alla sicurezza spaziale, alla guida alla codifica sicura, alla valutazione della sicurezza Zero Trust e alla sicurezza della catena di fornitura SW (SBOM), basato sulle linee guida della KISA (Agenzia Coreana per Internet e la Sicurezza).
 
 ---
 
@@ -16,10 +16,10 @@ KESE (KISA Enhanced Security Evaluation Kit) e un plugin per Claude Code che for
 
 | Skill | Descrizione |
 |-------|-------------|
-| `/kesekit-start` | Eseguire la valutazione completa delle vulnerabilita di sicurezza (CII 560+ / Sicurezza IA / Sicurezza Robotica / Sicurezza Spaziale / Codifica Sicura / Zero Trust) |
-| `/kesekit-check` | Checklist di conformita di sicurezza pre-distribuzione (CII / IA / Robot / Spazio / Codifica Sicura / Zero Trust) |
-| `/kesekit-fix` | Generare automaticamente script di hardening e correzioni di sicurezza (CII / IA / Robot / Spazio / Codifica Sicura / Zero Trust) |
-| `/kesekit-guide` | Generare prompt di codifica sicura per strumenti di IA (CII / IA / Robot / Spazio / JS·Python·Generico / Zero Trust) |
+| `/kesekit-start` | Eseguire la valutazione completa delle vulnerabilita di sicurezza (CII 560+ / Sicurezza IA / Sicurezza Robotica / Sicurezza Spaziale / Codifica Sicura / Zero Trust / Catena di fornitura SW) |
+| `/kesekit-check` | Checklist di conformita di sicurezza pre-distribuzione (CII / IA / Robot / Spazio / Codifica Sicura / Zero Trust / Catena di fornitura SW) |
+| `/kesekit-fix` | Generare automaticamente script di hardening e correzioni di sicurezza (CII / IA / Robot / Spazio / Codifica Sicura / Zero Trust / Catena di fornitura SW) |
+| `/kesekit-guide` | Generare prompt di codifica sicura per strumenti di IA (CII / IA / Robot / Spazio / JS·Python·Generico / Zero Trust / Catena di fornitura SW) |
 
 ## Linee Guida Supportate
 
@@ -128,6 +128,16 @@ Destinatari: Sviluppatori web JavaScript/Python, utenti di strumenti IA (Claude,
 **Standard di riferimento**: KISA Zero Trust Guideline 2.0, NIST SP 800-207, CISA ZT Maturity Model
 
 Destinatari: Aziende che adottano Zero Trust, ambienti OT/ICS, organizzazioni in migrazione cloud, responsabili della valutazione della maturita della sicurezza
+
+### 7. Sicurezza della catena di fornitura SW (SBOM) — 29 elementi
+
+| Fase | Codice | Elementi | Standard di Riferimento |
+|------|--------|:--------:|------------------------|
+| Progettazione | SC-01~05 | 5 | NIST SP 800-161r1 |
+| Sviluppo | SC-06~16 | 11 | NIST SP 800-218 |
+| Fornitura/Distribuzione | SC-17~19 | 3 | NTIA SBOM |
+| Distribuzione e operazioni | SC-20~26 | 7 | NIS-SBOM |
+| Manutenzione | SC-27~29 | 3 | NIS-SBOM |
 
 ## Installazione
 

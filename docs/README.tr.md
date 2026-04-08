@@ -4,7 +4,7 @@
 
 # KESE - KISA Enhanced Security Evaluation Kit
 
-Kritik Bilgi Altyapisi (CII) zafiyet analiz-degerlendirmesi, AI guvenlik degerlendirmesi, robot guvenligi, uzay guvenligi, guvenli kodlama kilavuzu ve Sifir Guven (Zero Trust) guvenlik degerlendirmesi icin Claude Code beceri eklentisidir.
+Kritik Bilgi Altyapisi (CII) zafiyet analiz-degerlendirmesi, AI guvenlik degerlendirmesi, robot guvenligi, uzay guvenligi, guvenli kodlama kilavuzu, Sifir Guven (Zero Trust) guvenlik degerlendirmesi ve SW Tedarik Zinciri Guvenligi (SBOM) icin Claude Code beceri eklentisidir.
 
 ---
 
@@ -16,10 +16,10 @@ KESE (KISA Enhanced Security Evaluation Kit), KISA (Kore Internet ve Guvenlik Aj
 
 | Beceri | Aciklama |
 |--------|----------|
-| `/kesekit-start` | Tam guvenlik zafiyet degerlendirmesi calistir (CII 560+ / AI Guvenlik / Robot Guvenligi / Uzay Guvenligi / Guvenli Kodlama / Sifir Guven) |
-| `/kesekit-check` | Dagitim oncesi guvenlik uyumluluk kontrol listesi (CII / AI / Robot / Uzay / Guvenli Kodlama / Sifir Guven) |
-| `/kesekit-fix` | Sikilastirma betikleri ve guvenlik duzeltmeleri otomatik olustur (CII / AI / Robot / Uzay / Guvenli Kodlama / Sifir Guven) |
-| `/kesekit-guide` | AI araclari icin guvenli kodlama komut istemi olustur (CII / AI / Robot / Uzay / JS·Python·Genel / Sifir Guven) |
+| `/kesekit-start` | Tam guvenlik zafiyet degerlendirmesi calistir (CII 560+ / AI Guvenlik / Robot Guvenligi / Uzay Guvenligi / Guvenli Kodlama / Sifir Guven / SW Tedarik Zinciri) |
+| `/kesekit-check` | Dagitim oncesi guvenlik uyumluluk kontrol listesi (CII / AI / Robot / Uzay / Guvenli Kodlama / Sifir Guven / SW Tedarik Zinciri) |
+| `/kesekit-fix` | Sikilastirma betikleri ve guvenlik duzeltmeleri otomatik olustur (CII / AI / Robot / Uzay / Guvenli Kodlama / Sifir Guven / SW Tedarik Zinciri) |
+| `/kesekit-guide` | AI araclari icin guvenli kodlama komut istemi olustur (CII / AI / Robot / Uzay / JS·Python·Genel / Sifir Guven / SW Tedarik Zinciri) |
 
 ## Desteklenen Kilavuzlar
 
@@ -128,6 +128,16 @@ Hedef Kitle: JavaScript/Python web gelistiricileri, AI arac (Claude, Cursor, Cop
 **Referans Standartlar**: KISA Zero Trust Guideline 2.0, NIST SP 800-207, CISA ZT Maturity Model
 
 Hedef Kitle: Sifir Guven benimseyen kuruluslar, OT/ICS ortamlari, buluta gecis yapan organizasyonlar, guvenlik olgunluk degerlendirme sorumlulari
+
+### 7. SW Tedarik Zinciri Guvenligi (SBOM) — 29 madde
+
+| Asama | Kod | Madde | Standart |
+|-------|-----|:-----:|----------|
+| Tasarim | SC-01~05 | 5 | NIST SP 800-161r1 |
+| Gelistirme | SC-06~16 | 11 | NIST SP 800-218 |
+| Tedarik/Dagitim | SC-17~19 | 3 | NTIA SBOM |
+| Dagitim ve Isletme | SC-20~26 | 7 | NIS-SBOM |
+| Bakim | SC-27~29 | 3 | NIS-SBOM |
 
 ## Kurulum
 

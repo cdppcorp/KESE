@@ -4,7 +4,7 @@
 
 # KESE - KISA Enhanced Security Evaluation Kit
 
-Ett Claude Code skill-plugin for sarbarhetsanalys av kritisk informationsinfrastruktur (CII), AI-sakerhetsutvardering, robotsakerhet, rymdsakerhet, saker kodning och Zero Trust-utvardering.
+Ett Claude Code skill-plugin for sarbarhetsanalys av kritisk informationsinfrastruktur (CII), AI-sakerhetsutvardering, robotsakerhet, rymdsakerhet, saker kodning, Zero Trust-utvardering och SW-leveranskedjesakerhet (SBOM).
 
 ---
 
@@ -16,10 +16,10 @@ KESE (KISA Enhanced Security Evaluation Kit) ar ett Claude Code-plugin som erbju
 
 | Skill | Beskrivning |
 |-------|-------------|
-| `/kesekit-start` | Kor fullstandig sakerhetsarbarhetsanalys (CII 560+ / AI / Robot / Rymd / Saker kodning / Zero Trust) |
-| `/kesekit-check` | Sakerhetschecklista for efterlevnad fore driftsattning (CII / AI / Robot / Rymd / Saker kodning / Zero Trust) |
-| `/kesekit-fix` | Generera hardening-skript och sakerhetsatgarder automatiskt (CII / AI / Robot / Rymd / Saker kodning / Zero Trust) |
-| `/kesekit-guide` | Generera secure coding-promptar for AI-verktyg (CII / AI / Robot / Rymd / JS·Python·Allman / Zero Trust) |
+| `/kesekit-start` | Kor fullstandig sakerhetsarbarhetsanalys (CII 560+ / AI / Robot / Rymd / Saker kodning / Zero Trust / SW-leveranskedja) |
+| `/kesekit-check` | Sakerhetschecklista for efterlevnad fore driftsattning (CII / AI / Robot / Rymd / Saker kodning / Zero Trust / SW-leveranskedja) |
+| `/kesekit-fix` | Generera hardening-skript och sakerhetsatgarder automatiskt (CII / AI / Robot / Rymd / Saker kodning / Zero Trust / SW-leveranskedja) |
+| `/kesekit-guide` | Generera secure coding-promptar for AI-verktyg (CII / AI / Robot / Rymd / JS·Python·Allman / Zero Trust / SW-leveranskedja) |
 
 ## Riktlinjer som stods
 
@@ -128,6 +128,16 @@ Malgrupp: JavaScript/Python-webbutvecklare, AI-verktygsanvandare (Claude, Cursor
 **Referensstandarder**: KISA Zero Trust Guideline 2.0, NIST SP 800-207, CISA ZT Maturity Model
 
 Malgrupp: Organisationer som infor Zero Trust, OT/ICS-miljoer, Organisationer som migrerar till molnet, Ansvariga for sakerhetsmognadsbedomning
+
+### 7. SW-leveranskedjesakerhet (SBOM) — 29 objekt
+
+| Fas | Kod | Antal objekt | Standard |
+|-----|-----|:------:|----------|
+| Design | SC-01~05 | 5 | NIST SP 800-161r1 |
+| Utveckling | SC-06~16 | 11 | NIST SP 800-218 |
+| Leverans/Distribution | SC-17~19 | 3 | NTIA SBOM |
+| Driftsattning & Drift | SC-20~26 | 7 | NIS-SBOM |
+| Underhall | SC-27~29 | 3 | NIS-SBOM |
 
 ## Installation
 
